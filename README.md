@@ -268,6 +268,9 @@ This site was then deployed on Heroku:
 
 - Django 4.2.1 (version 4 since it is a long-term supported (LTS) release)
 - Gunicorn 20.1
+- PostgreSQL / [ElephantSQL](https://elephantsql.com)
+- Dj-database-url 0.5
+- Psycopg2 2.9
 
 
 
