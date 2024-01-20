@@ -271,6 +271,7 @@ This site was then deployed on Heroku:
 - PostgreSQL / [ElephantSQL](https://elephantsql.com)
 - Dj-database-url 0.5
 - Psycopg2 2.9
+- [Random key generator](https://randomkeygen.com/)
 
 
 
