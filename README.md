@@ -267,6 +267,7 @@ This site was then deployed on Heroku:
 ## Technologies Used and Sources
 
 - Django 4.2.1 (version 4 since it is a long-term supported (LTS) release)
+- Gunicorn 20.1
 
 
 
