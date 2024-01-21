@@ -2,9 +2,10 @@ from django.db import models
 # import built-in User from Django
 from django.contrib.auth.models import User
 
+# Status options for status variable
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
+# MODELS
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=110, unique=True)
@@ -34,8 +35,9 @@ class Comment(models.Model):
     # Metadata within the model
     # Order comments by date created starting with the most recent
     class Meta:
-        ordering = ["-created_on"] # Ordering is my own
+        ordering = ["-created_on"]
 
     # Change comment identifier to a string literal
     def __str__(self):
-        return f"Comment: '{self.body}' by {self.author}" # String literal is my own
+        shortened_date = self.created_on.strftime("%Y-%m-%d")  # Adjust the format of the date to only include year, month and day; code is my own
+        return f"Comment: '{self.body}' by {self.author} commented on {shortened_date}" # String literal is my own
