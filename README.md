@@ -272,6 +272,10 @@ This site was then deployed on Heroku:
 - Dj-database-url 0.5
 - Psycopg2 2.9
 - [Random key generator](https://randomkeygen.com/)
+- Summernote 0.8.20.0
+- Bootstrap 5.0.1
+- Google Fonts
+- Font Awesome
 
 
 
