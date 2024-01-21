@@ -14,6 +14,15 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     updated_on = models.DateTimeField(auto_now=True)
 
+    # Metadata within the model
+    # Order posts by date created starting with the most recent
+    class Meta:
+        ordering = ["-created_on"]
+
+    # Change post identifier to a string literal
+    def __str__(self):
+        return f"{self.title} | written by {self.author}" 
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
