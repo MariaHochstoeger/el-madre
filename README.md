@@ -276,6 +276,7 @@ This site was then deployed on Heroku:
 - Bootstrap 5.0.1
 - Google Fonts
 - Font Awesome
+- Whitenoise 5.3.0
 
 
 
