@@ -9,6 +9,7 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
+                <!-- 'post_list' is determined based on Post model and ListView type -->
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -21,7 +22,8 @@
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                             </a>
-
+                            <!-- https://www.djangotemplatetagsandfilters.com/filters/truncatewords/ -->
+                            <h2 class="card-text">{{post.content|truncatewords:20}} </h2>
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}}
                             </p>
@@ -50,6 +52,3 @@
 
 <!-- index.html content ends here -->
 {% endblock %}
-
-    <!-- https://www.djangotemplatetagsandfilters.com/filters/truncatewords/ -->
-    <!-- <p>{{post.content|truncatewords:10}}</p> -->
