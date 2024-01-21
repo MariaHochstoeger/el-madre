@@ -30,3 +30,12 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    # Metadata within the model
+    # Order comments by date created starting with the most recent
+    class Meta:
+        ordering = ["-created_on"] # Ordering is my own
+
+    # Change comment identifier to a string literal
+    def __str__(self):
+        return f"Comment: '{self.body}' by {self.author}" # String literal is my own
