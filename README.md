@@ -280,4 +280,4 @@ This site was then deployed on Heroku:
 
 
 ## Credits
-- ...
+- User indigo7220 for the "happy colors Color Palette" they made available on [color-hex.com](https://www.color-hex.com/color-palette/7779)
