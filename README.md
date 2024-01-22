@@ -264,20 +264,22 @@ This site was then deployed on Heroku:
 - Deployed by choosing "Manual deploy".
 - Later enabled automatic deploys.
 
-## Technologies Used and Sources
+## Technologies/Packages Used and Sources
 
-- Django 4.2.1 (version 4 since it is a long-term supported (LTS) release)
-- Gunicorn 20.1
+- Django v4.2.1 (version 4 since it is a long-term supported (LTS) release)
+- Gunicorn v20.1
 - PostgreSQL / [ElephantSQL](https://elephantsql.com)
-- Dj-database-url 0.5
-- Psycopg2 2.9
+- Dj-database-url v0.5
+- Psycopg2 v2.9
 - [Random key generator](https://randomkeygen.com/)
-- Summernote 0.8.20.0
-- Bootstrap 5.0.1
+- Summernote v0.8.20.0
+- Bootstrap v5.0.1
 - Google Fonts
 - Font Awesome
-- Whitenoise 5.3.0
-- Django-Allauth 0.57.0
+- Whitenoise v5.3.0
+- Django Allauth v0.57.0
+- Django Crispy Forms v2.0
+- Crispy Bootstrap5 v0.7
 
 
 ## Credits
