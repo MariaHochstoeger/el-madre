@@ -277,7 +277,7 @@ This site was then deployed on Heroku:
 - Google Fonts
 - Font Awesome
 - Whitenoise 5.3.0
-
+- Django-Allauth 0.57.0
 
 
 ## Credits
