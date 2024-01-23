@@ -288,3 +288,4 @@ This site was then deployed on Heroku:
 ## Credits
 - User indigo7220 for the "happy colors Color Palette" they made available on [color-hex.com](https://www.color-hex.com/color-palette/7779)
 - Default photo by Jess Bailey Designs on [pexels.com](https://www.pexels.com/photo/two-brown-pencils-on-white-surface-965117/)
+- Photo by Anurag Sharma on [pexels.com]https://www.pexels.com/photo/photo-of-four-people-showing-painted-hands-2728252/

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin # extra functionality for posts written by superuser
+from .models import Post, Comment
 
 
 @admin.register(Post) # decorator to register the class Post
