@@ -280,6 +280,9 @@ This site was then deployed on Heroku:
 - Django Allauth v0.57.0
 - Django Crispy Forms v2.0
 - Crispy Bootstrap5 v0.7
+- Cloudinary v1.36.0
+- Dj3 Cloudinary Storage v0.0.6
+- Urllib3 v1.26.15
 
 
 ## Credits
