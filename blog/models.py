@@ -3,8 +3,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
+
+    # Change category identifier to a string literal
+    def __str__(self):
+        return f"{self.name}" 
 
 
 # Status options for status variable
@@ -23,6 +28,8 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     updated_on = models.DateTimeField(auto_now=True)
+    # make categories impossible to delete, set default category to Miscellaneous (1)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1) # related_name?
 
     # Metadata within the model
     # Order posts by date created starting with the most recent
