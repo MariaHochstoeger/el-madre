@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin # extra functionality for posts written by superuser
-from .models import Post, Comment
+from .models import Post, Comment, Category
 
-
+# Registering models so that they appear on the admin site
 @admin.register(Post) # decorator to register the class Post
 class PostAdmin(SummernoteModelAdmin):
 
@@ -19,5 +19,7 @@ class PostAdmin(SummernoteModelAdmin):
         queryset.update(status=1)
     make_published.short_description = "Mark selected posts as published"
 
-# Registering models so that they appear on the admin site
+
 admin.site.register(Comment)
+
+admin.site.register(Category)
