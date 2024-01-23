@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic # import generic django view
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.views.generic import ListView
 from .models import Post, Comment # import Post and Comment models from models.py
 from .forms import CommentForm # import CommentForm from forms.py
 
@@ -12,6 +13,18 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1) # returns all records from the Post model with status 1, ie published
     template_name = "blog/index.html"
     paginate_by = 3
+
+
+class CatListView(ListView):
+    template_name = 'category.html'
+    context_object_name = 'catlist'
+
+    def get_queryset(self):
+        content = {
+            'cat': self.kwargs['category'],
+            'posts': Post.objects.filter(category__name=self.kwargs['category']).filter(status=1)
+        }
+        return content
 
 
 # Function-based views
