@@ -34,6 +34,11 @@ body {
     background-color: transparent;
 }
 
+.card-img-top {
+    height: 50vh;
+}
+
+
 .image-container {
     position: relative;
 }
