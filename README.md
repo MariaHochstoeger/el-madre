@@ -161,9 +161,7 @@ Should the user not get all questions right from the start, the site would like 
 
 ### Fixed Bugs
 
-- JavaScript elements not working because of elements with the same class name (.btn) on different html-pages. Fixed - with the great help of my mentor, Spencer Barriball - by merging the two html-files into one.
-- When starting the game anew after having played once already, by clicking the "Play again!" button, the "Home" button was still visible at the newly displayed questions. Fixed by setting display of the home button to none in the respective function, resetState().
-- On mobile, when clicking "Next" after answering a question, the screenview stayed at the bottom of the page, where the Next button was. The user would like to see the next question though, ie the top of the screen. Fixed by introducing a command to scroll up into showQuestion().
+- When creating my categories, the site did not display correctly when adding /category/one-of-my-categories to the url even though the url was constructed correctly. The solution was that in the class CatListView(ListView), the variable template_name was incorrectly set to 'category.html', while the correct path was template_name = 'blog/category.html'.
 
 ### Unfixed Bugs
 
@@ -235,17 +233,6 @@ The timer seems to start with a slight delay. In order to optimize the timer's s
 | I want to see how much time is left for answering a question. | As a visitor, I see a countdown showing the seconds left for answering a question. |
 | I want to see my final score. | As a visitor, I see my final score after answering all questions |
 | I want to be able to play again, or let a friend play on the same device after I am finished. | As a visitor, I can choose to play again after finishing the quiz, or choose a new username by going back to the home page |
-
-## Deployment
-
-This site was deployed on GitHub Pages:
-- From the repository, first navigate to "Settings" (top of the page) and then "Pages" (left of the newly opened page)
-- Under "Source" choose "Deploy from a Branch" in the dropdown menu
-- Choose the "main" Branch, and folder "/(root)"
-- Click "save"
-- The website is subsequently deployed (this may take a few minutes) on GitHub Pages
-- To get there, in the "Code" tab of the repository, on the right-hand side under "Environments" click on "github-pages"
-- On the newly opened page, on the right-hand side, click on "View deployment"
 
 ## Deployment
 

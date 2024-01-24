@@ -16,7 +16,7 @@ class PostList(generic.ListView):
 
 
 class CatListView(ListView):
-    template_name = 'category.html'
+    template_name = 'blog/category.html'
     context_object_name = 'catlist'
 
     def get_queryset(self):
@@ -133,3 +133,4 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
