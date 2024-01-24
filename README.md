@@ -1,10 +1,10 @@
-# Indian Weddings for Beginners - A Quiz
+# El Madre - A Personal Blog
 
 Visit the live site [here](https://mariahochstoeger.github.io/project2/).
 
 ![responsive mock-up](assets/images/readme-images/mockup.png)
 
-This is a quiz about Indian weddings. It lets the user test their knowledge about some of the most common events - usually called "functions" - found in a traditional Indian Hindu wedding. On the website and in this readme, the terms "Hindu wedding" and "Indian wedding" are used interchangeably.
+This is a blog about the adventures of El Madre. El Madre is...
 
 ## Table of Contents
 
@@ -243,14 +243,11 @@ The code was edited in GitPod.
 - Changes in the course of the coding, as well as the final code and readme, were done in GitPod and then pushed to GitHub using the sequence: "git add ." --> "git commit -m "..."" --> "git push"
 
 This site was then deployed on Heroku:
-- In my code, I ensured that all input() text fields ended with a "\n"
 - In Heroku, on my dashboard, I clicked "New" and then "Create new app"
 - I named the app and set the region to "Europe", clicked "Create app"
-- In the settings tab, I added a Config Vars with the key "PORT" and the value "8000", clicked "Add"
-- Also in the settings tab, clicked "Add buildpack" and added "Python", then also added "Nodejs"
+- In the settings tab, I added the necessary Config Vars "CLOUDINARY_URL", "DATABASE_URL", and "SECRET_KEY" and the respective values, and clicked "Add"
 - In the deploy tab, selected "GitHub" as deployment method. Searched for my project and connected the app to it.
 - Deployed by choosing "Manual deploy".
-- Later enabled automatic deploys.
 
 ## Technologies/Packages Used and Sources
 
@@ -275,6 +272,8 @@ This site was then deployed on Heroku:
 
 
 ## Credits
-- User indigo7220 for the "happy colors Color Palette" they made available on [color-hex.com](https://www.color-hex.com/color-palette/7779)
+- User indigo7220 for the "happy colors Color Palette" made available on [color-hex.com](https://www.color-hex.com/color-palette/7779)
 - Default photo by Jess Bailey Designs on [pexels.com](https://www.pexels.com/photo/two-brown-pencils-on-white-surface-965117/)
 - Photo by Anurag Sharma on [pexels.com]https://www.pexels.com/photo/photo-of-four-people-showing-painted-hands-2728252/
+- My group facilitator Kay Welfare for providing guidance and directing me to focus on the relevant parts all while encouraging me to deliver a good project
+- Myself for putting in the work and effort and spending hours upon hours on fixing "little" bugs
