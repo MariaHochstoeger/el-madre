@@ -3,7 +3,7 @@ from django.views import generic # import generic django view
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView
-from .models import Post, Comment # import Post and Comment models from models.py
+from .models import Post, Comment, Category # import Post, Comment and Category models from models.py
 from .forms import CommentForm # import CommentForm from forms.py
 
 # VIEWS
@@ -134,3 +134,10 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
+def category_list(request):
+    category_list = Category.objects.exclude(name='default')
+    context = {
+        "category_list": category_list,
+    }
+    return context
