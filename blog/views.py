@@ -141,3 +141,17 @@ def category_list(request):
         "category_list": category_list,
     }
     return context
+
+
+def favourite_add(request, id):
+    post = get_object_or_404(Post, id=id)
+    if post.favourites.filter(id=request.user.id).exists():
+        post.favourites.remove(request.user)
+    else:
+        post.favourites.add(request.user)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+
+def favourite_list(request):
+    new = Post.objects.filter(favourites=request.user)
+    return render(request, 'blog/favourites.html', {'new': new})

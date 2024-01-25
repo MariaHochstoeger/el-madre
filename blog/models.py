@@ -27,8 +27,10 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    # add a favourites field which will hold the IDs of all Users which favourited this post
+    favourites = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    # make categories impossible to delete, set default category to Miscellaneous (1)
+    # make categories almost impossible to delete, set default category to Miscellaneous (1)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1) # related_name?
 
     # Metadata within the model

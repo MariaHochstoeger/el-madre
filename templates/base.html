@@ -5,6 +5,7 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'category' as category_url %}
+{% url 'favourite_list' as favourite_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -60,6 +61,10 @@
                             </a>
                             {% endfor %}
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == favourite_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'favourite_list' %}">Favourites</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
