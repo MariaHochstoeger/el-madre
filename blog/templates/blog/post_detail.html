@@ -11,7 +11,13 @@
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 <!-- Add to Favourites button -->
+                <!-- Make button functional for logged in users -->
+                {% if request.user.is_authenticated %}
                 <a href="{% url 'favourite_add' post.id %}" class="btn btn-outline-primary">Add to Favourites</a>
+                <!-- Redirect not logged in users to signup page -->
+                {% else %}
+                <a href="{% url 'account_signup'%}" class="btn btn-outline-primary">Add to Favourites</a>
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}

@@ -161,8 +161,9 @@ Should the user not get all questions right from the start, the site would like 
 
 ### Fixed Bugs
 
-- When creating my categories, the site did not display correctly when adding /category/one-of-my-categories to the url even though the url was constructed correctly. The solution was that in the class CatListView(ListView), the variable template_name was incorrectly set to 'category.html', while the correct path was template_name = 'blog/category.html'.
+- When creating my categories, the site did not display correctly when appending /category/one-of-my-categories to the url even though the url was constructed correctly. The solution was that in the class CatListView(ListView), the variable template_name was incorrectly set to 'category.html', while the correct path was template_name = 'blog/category.html'.
 - When creating my categories-dropdown in the navbar, the categories did not display. The reason was that I had used data-toggle="dropdown", which came from older Bootstrap versions. Fixed by changing to data-bs-toggle="dropdown", which is the correct attribute under Bootstrap 5.
+- When a logged in user clicked on "Add to favourites" on a post which they had previously already favourited, then the post was removed from the user's favourites.
 
 ### Unfixed Bugs
 
