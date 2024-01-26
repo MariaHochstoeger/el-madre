@@ -71,7 +71,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #ffea6c;
+    background-color: #ff9a55;
     color: white;
     position: relative;
 }
@@ -112,7 +112,14 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: #3e4650;
+}
+
+.btn-favourites {
+    margin-left: 5%;
+    color: #445261;
+    border-color: #445261;
+    font-weight: bold;
 }
 
 .btn-signup,
