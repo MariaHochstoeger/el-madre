@@ -22,7 +22,11 @@ body {
 }
 
 .dark-bg {
-    background-color: #54fffb;
+    background-color: #89ffcc;
+}
+
+.orange-bg {
+    background-color: #ff9a55;
 }
 
 .main-bg {
