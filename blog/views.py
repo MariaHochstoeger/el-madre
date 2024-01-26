@@ -148,8 +148,10 @@ def favourite_add(request, id):
     post = get_object_or_404(Post, id=id)
     if post.favourites.filter(id=request.user.id).exists():
         post.favourites.remove(request.user)
+        messages.add_message(request, messages.SUCCESS, 'Removed from your favourites!')
     else:
         post.favourites.add(request.user)
+        messages.add_message(request, messages.SUCCESS, 'Added to your favourites!')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
