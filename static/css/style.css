@@ -43,7 +43,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #ff9a55;
+    background-color: #ffea6c;
 }
 
 .scale {
@@ -52,7 +52,7 @@ body {
 }
 
 .author {
-    color: white;
+    color: #3e4650;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -98,7 +98,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #89ffcc;
+    color: #e7b2ff;
 }
 
 .post-title {
@@ -158,4 +158,8 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+.bold {
+    font-weight: 700;
 }

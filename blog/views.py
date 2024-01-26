@@ -3,6 +3,7 @@ from django.views import generic # import generic django view
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, Comment, Category # import Post, Comment and Category models from models.py
 from .forms import CommentForm # import CommentForm from forms.py
 
