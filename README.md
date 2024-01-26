@@ -253,6 +253,7 @@ This site was then deployed on Heroku:
 ## Technologies/Packages Used and Sources
 
 - Django v4.2.1 (version 4 since it is a long-term supported (LTS) release)
+- Django Template Tags and Filters for learning about [truncate](https://www.djangotemplatetagsandfilters.com/filters/truncatewords/)
 - Gunicorn v20.1
 - PostgreSQL / [ElephantSQL](https://elephantsql.com)
 - Dj-database-url v0.5

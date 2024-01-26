@@ -17,6 +17,10 @@ body {
     font-weight: 300;
 }
 
+.larger {
+    font-size: larger;
+}
+
 .light-bg {
     background-color: #fff;
 }
