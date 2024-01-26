@@ -54,6 +54,11 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
 
+     # Check if the post is a favorite for the current user
+    favourite_status = False #new
+    if request.user.is_authenticated:#new
+        favourite_status = post.favourites.filter(id=request.user.id).exists()#new
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -76,6 +81,7 @@ def post_detail(request, slug):
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
+            "favourite_status": favourite_status, #new
         },
     )
 
@@ -148,9 +154,11 @@ def favourite_add(request, id):
     post = get_object_or_404(Post, id=id)
     if post.favourites.filter(id=request.user.id).exists():
         post.favourites.remove(request.user)
+        favourite_status = False
         messages.add_message(request, messages.SUCCESS, 'Removed from your favourites!')
     else:
         post.favourites.add(request.user)
+        favourite_status = True
         messages.add_message(request, messages.SUCCESS, 'Added to your favourites!')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 

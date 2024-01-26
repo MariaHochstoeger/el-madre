@@ -13,15 +13,22 @@
                 <!-- Add to Favourites button -->
                 <!-- Make button functional for logged in users -->
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'favourite_add' post.id %}" class="btn btn-outline-secondary btn-favourites">Add to Favourites</a>
+                <a href="{% url 'favourite_add' post.id %}" class="btn btn-outline-secondary btn-favourites">
+                    {% if favourite_status %}
+                    Remove from Favourites
+                    {% else %}
+                    Add to Favourites
+                    {% endif %}
+                </a>
                 <!-- Redirect not logged in users to signup page -->
                 {% else %}
-                <a href="{% url 'account_signup'%}" class="btn btn-outline-primary">Add to Favourites</a>
+                <a href="{% url 'account_signup'%}" class="btn btn-outline-secondary btn-favourites">Add to
+                    Favourites</a>
                 {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
+                <img src="{% static 'images/default-photo.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
                 {% endif %}
