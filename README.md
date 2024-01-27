@@ -111,17 +111,9 @@ The site has the basic features of a static website as well as some interactive 
 
 ### Possible Future Features
 
-- Include a progress bar
+- About Me Page
 
-    - In order to show the user how many questions are remaining in the game, a progress bar could be introduced.
-    - With each question answered, the progress bar would fill up until it was full after answering the last question.
-    - This would give the user a better feeling of how much time the game needs, and motivate users to play until the end.
-
-- Display a personalized message depending on the score
-
-    - After answering all questions, the score is displayed
-    - Along with the score, there could be a message giving the user more feedback on how they did
-    - Low scores would get more words of encouragement, while higher scores would get more words of praise
+    - ...
 
 ## UX
 
@@ -282,4 +274,5 @@ This site was then deployed on Heroku:
 - Photo by Jeswin Thomas on [pexels.com](https://www.pexels.com/photo/mosque-1007426/)
 - Photo by Studio Art Smile on [pexels.com](https://www.pexels.com/photo/horizontally-striped-flag-3476860/)
 - My group facilitator Kay Welfare for providing guidance and directing me to focus on the relevant parts all while encouraging me to deliver a good project
+- My Mentor Spencer Barriball for his input and making himself available for questions
 - Myself for putting in the work and effort and spending hours upon hours on fixing "little" bugs
