@@ -9,7 +9,7 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{{ post.author }} | {{ post.category|title }} | {{ post.created_on|date:"Y-m-d" }}</p>
                 <!-- Add to Favourites button -->
                 <!-- Make button functional for logged in users -->
                 {% if request.user.is_authenticated %}
@@ -74,7 +74,7 @@
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
-                            {{ comment.created_on }}
+                            {{ comment.created_on|date:"Y-m-d" }}
                         </span> wrote:
                     </p>
                     <div id="comment{{ comment.id }}">
@@ -82,7 +82,7 @@
                     </div>
                     {% if not comment.approved and comment.author == user %}
                     <p class="approval">
-                        This comment is awaiting approval
+                        This comment has not yet been approved
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}

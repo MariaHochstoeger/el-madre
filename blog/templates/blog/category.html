@@ -40,7 +40,7 @@ Catlist
                             <!-- ensure html tags are not displayed by using DTL striptags -->
                             <h2 class="card-text">{{post.content|truncatewords:20|striptags}} </h2>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
+                            <p class="card-text text-muted h6">{{ post.created_on|date:"Y-m-d" }}
                             </p>
                         </div>
                     </div>

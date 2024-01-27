@@ -61,5 +61,5 @@ class Comment(models.Model):
 
     # Change comment identifier to a string literal
     def __str__(self):
-        shortened_date = self.created_on.strftime("%Y-%m-%d")  # Adjust the format of the date to only include year, month and day; code is my own
+        shortened_date = self.created_on.strftime("%Y-%m-%d")  # Adjust the format of the date to only include year, month and day
         return f"Comment: '{self.body}' by {self.author} commented on {shortened_date}" # String literal is my own
