@@ -275,7 +275,11 @@ This site was then deployed on Heroku:
 
 ## Credits
 - User indigo7220 for the "happy colors Color Palette" made available on [color-hex.com](https://www.color-hex.com/color-palette/7779)
+- [Favicon.io](https://favicon.io/favicon-generator/) for generating a Favicon
 - Default photo by Jess Bailey Designs on [pexels.com](https://www.pexels.com/photo/two-brown-pencils-on-white-surface-965117/)
-- Photo by Anurag Sharma on [pexels.com]https://www.pexels.com/photo/photo-of-four-people-showing-painted-hands-2728252/
+- Photo by Anurag Sharma on [pexels.com](https://www.pexels.com/photo/photo-of-four-people-showing-painted-hands-2728252/)
+- Photo by Steve Johnson on [pexels.com](https://www.pexels.com/photo/orange-yellow-green-and-blue-abstract-painting-1704120/)
+- Photo by Jeswin Thomas on [pexels.com](https://www.pexels.com/photo/mosque-1007426/)
+- Photo by Studio Art Smile on [pexels.com](https://www.pexels.com/photo/horizontally-striped-flag-3476860/)
 - My group facilitator Kay Welfare for providing guidance and directing me to focus on the relevant parts all while encouraging me to deliver a good project
 - Myself for putting in the work and effort and spending hours upon hours on fixing "little" bugs
