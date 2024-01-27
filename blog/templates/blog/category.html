@@ -10,13 +10,13 @@ Catlist
 <!-- category.html content starts here -->
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 <div class="col-12 pb-5 text-center">
+                    <!-- Page header -->
                     <h1 class=> All Posts In The Category "{{catlist.cat|title}}"</h1>
                 </div>
+                <!-- Blog Entries -->
                 {% for post in catlist.posts %}
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -40,6 +40,7 @@ Catlist
                             <!-- ensure html tags are not displayed by using DTL striptags -->
                             <h2 class="card-text">{{post.content|truncatewords:20|striptags}} </h2>
                             <hr />
+                            <!-- Only display date as YYY-MM-DD, without time stamp -->
                             <p class="card-text text-muted h6">{{ post.created_on|date:"Y-m-d" }}
                             </p>
                         </div>

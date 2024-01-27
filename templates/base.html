@@ -11,7 +11,7 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>El Madre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
@@ -48,6 +48,7 @@
                         <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
                             href="{% url 'home' %}">Home</a>
                     </li>
+                    <!-- A logged in user can see a Categories drop down and a Favourites button, as well as Logout, in the navbar -->
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {% if request.path == category_url %}active" aria-current="page{% endif %}" href="#" id="navbarDropdown" role="button"
@@ -70,6 +71,7 @@
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    <!-- A logged out user can see a Register and a Login button in the navbar -->
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"

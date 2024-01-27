@@ -8,19 +8,22 @@
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.category|title }} | {{ post.created_on|date:"Y-m-d" }}</p>
-                <!-- Add to Favourites button -->
+                <!-- Post author goes before the |. Then the post's category, then the post's created date -->
+                <p class="post-subtitle">{{ post.author }} | {{ post.category|title }} |
+                    {{ post.created_on|date:"Y-m-d" }}</p>
+                <!-- Add to/Remove from Favourites button -->
                 <!-- Make button functional for logged in users -->
                 {% if request.user.is_authenticated %}
                 <a href="{% url 'favourite_add' post.id %}" class="btn btn-outline-secondary btn-favourites">
+                    <!-- if favourite_status is True, ie the user id has already been added to the post's favourites variable, button reads "Remove from Favourites" -->
                     {% if favourite_status %}
                     Remove from Favourites
+                    <!-- if favourite_status is False, ie the user id has not yet been added to the post's favourites variable, button reads "Add to Favourites" -->
                     {% else %}
                     Add to Favourites
                     {% endif %}
                 </a>
-                <!-- Redirect not logged in users to signup page -->
+                <!-- Redirect not logged in users from Favourites button to signup page -->
                 {% else %}
                 <a href="{% url 'account_signup'%}" class="btn btn-outline-secondary btn-favourites">Add to
                     Favourites</a>
@@ -65,9 +68,12 @@
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
+                <!-- For loop inside the empty control tags
+          iterates through each comment in comments -->
                 {% for comment in comments %}
+                <!-- Comments are approved and displayed by default -->
+                <!-- Should the admin un-approve a comment, it is greyed out for the writer of the comment -->
+                <!-- Not approved comments are not visible for users who did not write the comment -->
                 <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
@@ -85,18 +91,20 @@
                         This comment has not yet been approved
                     </p>
                     {% endif %}
+                    <!-- The user who wrote a comment can edit and delete it via the respective button -->
                     {% if user.is_authenticated and comment.author == user %}
                     <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
                 </div>
-                <!-- Our for loop ends here -->
+                <!-- For loop ends here -->
                 {% endfor %}
             </div>
         </div>
         <!-- Creating New Comments -->
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
+                <!-- A logged in user can leave a comment -->
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
@@ -105,6 +113,7 @@
                     {% csrf_token %}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
+                <!-- A user who is not logged in is encouraged to log in to be able to comment -->
                 {% else %}
                 <p>Log in to leave a comment</p>
                 {% endif %}
@@ -120,6 +129,7 @@
                 <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <!-- Double check that the user really wants to delete the comment -->
             <div class="modal-body">
                 Are you sure you want to delete your comment?
                 This action cannot be undone.

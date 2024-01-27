@@ -6,10 +6,9 @@
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
+                <!-- A list of all posts -->
                 <!-- 'post_list' is determined based on Post model and ListView type -->
                 {% for post in post_list %}
                 <div class="col-md-4">
@@ -22,6 +21,7 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                                 {% endif %}
+                                <!-- Tags for displaying author and category -->
                                 <div class="image-flash">
                                     <p class="author bold">Author: {{ post.author }}</p>
                                     <p class="author bold">Category: {{ post.category }}</p>
@@ -34,11 +34,13 @@
                             <!-- ensure html tags are not displayed by using DTL striptags -->
                             <h2 class="card-text">{{post.content|truncatewords:20|striptags}} </h2>
                             <hr />
+                            <!-- Only display date as YYY-MM-DD, without time stamp -->
                             <p class="card-text text-muted h6">{{ post.created_on|date:"Y-m-d" }}
                             </p>
                         </div>
                     </div>
                 </div>
+                <!-- Add div if number of posts is divisible by 3 -->
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
@@ -48,6 +50,7 @@
             </div>
         </div>
     </div>
+    <!-- Display PREV and/or NEXT buttons if there is pagination -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
