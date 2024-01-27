@@ -143,6 +143,18 @@ def comment_delete(request, slug, comment_id):
 
 
 def category_list(request):
+    """
+    Retrieve a list of categories excluding the default one.
+
+    **Context**
+
+    ``category_list``
+        A list of :model:`blog.Category` instances.
+
+    **Template:**
+
+    :template:`blog/category.html`
+    """
     category_list = Category.objects.exclude(name='default')
     context = {
         "category_list": category_list,
@@ -151,6 +163,14 @@ def category_list(request):
 
 
 def favourite_add(request, id):
+    """
+    Add or remove a post from the user's favorites.
+
+    **Context**
+
+    ``favourite_status``
+        A boolean indicating whether the post is in the user's favorites.
+    """
     post = get_object_or_404(Post, id=id)
     if post.favourites.filter(id=request.user.id).exists():
         post.favourites.remove(request.user)
@@ -164,5 +184,17 @@ def favourite_add(request, id):
 
 
 def favourite_list(request):
+    """
+    Display a list of the user's favorite posts.
+
+    **Context**
+
+    ``new``
+        A queryset of :model:`blog.Post` instances that the user has favorited.
+
+    **Template:**
+
+    :template:`blog/favourites.html`
+    """
     new = Post.objects.filter(favourites=request.user)
     return render(request, 'blog/favourites.html', {'new': new})

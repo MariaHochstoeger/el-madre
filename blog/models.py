@@ -4,7 +4,11 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
+# MODELS
 class Category(models.Model):
+    """
+    Stores a single category related to :model:`blog.Post`.
+    """
     name = models.CharField(max_length=50)
 
     # Change category identifier to a string literal
@@ -15,10 +19,10 @@ class Category(models.Model):
 # Status options for status variable
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# MODELS
+
 class Post(models.Model):
     """
-    Stores a single blog post entry related to :model:`auth.User`.
+    Stores a single blog post entry related to :model:`auth.User` and to :model:`blog.Category`.
     """
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=110, unique=True)
@@ -30,8 +34,8 @@ class Post(models.Model):
     # add a favourites field which will hold the IDs of all Users which favourited this post
     favourites = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    # make categories almost impossible to delete, set default category to Miscellaneous (1)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1) # related_name?
+    # make categories very difficult to delete, set default category to Miscellaneous (1)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
 
     # Metadata within the model
     # Order posts by date created starting with the most recent
