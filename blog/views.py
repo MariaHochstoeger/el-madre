@@ -11,12 +11,40 @@ from .forms import CommentForm # import CommentForm from forms.py
 
 # Class-based views
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1) # returns all records from the Post model with status 1, ie published
+    """
+    Display a list of published :model:`blog.Post` entries
+    and displays them as three posts per page.
+
+    **Context**
+
+    ``queryset``
+        A list of :model:`blog.Post` instances.
+    ``paginate_by``
+        Number of posts per page
+
+    **Template:**
+
+    :template:`blog/index.html`
+    """
+    # returns all records from the Post model with status 1, ie published
+    queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
     paginate_by = 3
 
 
 class CatListView(ListView):
+    """
+    Display a list of published :model:`blog.Post` entries belonging to a specific category.
+
+    **Context**
+
+    ``catlist``
+        A dictionary with keys 'cat' for the category name and 'posts' for a list of :model:`blog.Post` instances.
+
+    **Template:**
+
+    :template:`blog/category.html`
+    """
     template_name = 'blog/category.html'
     context_object_name = 'catlist'
 
@@ -41,6 +69,8 @@ def post_detail(request, slug):
         All approved comments related to the post.
     ``comment_count``
         A count of approved comments related to the post.
+    ``favourite_status``
+        A boolean indicating whether the current user has favorited the post.
     ``comment_form``
         An instance of :form:`blog.CommentForm`.
 
@@ -54,10 +84,10 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
 
-     # Check if the post is a favorite for the current user
-    favourite_status = False #new
-    if request.user.is_authenticated:#new
-        favourite_status = post.favourites.filter(id=request.user.id).exists()#new
+    # Check if the post is a favorite for the current user
+    favourite_status = False
+    if request.user.is_authenticated:
+        favourite_status = post.favourites.filter(id=request.user.id).exists()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
