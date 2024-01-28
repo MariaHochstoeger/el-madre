@@ -4,7 +4,7 @@ Visit the live site [here](https://el-madre-82f96d334383.herokuapp.com/).
 
 ![responsive mock-up](assets/images/readme-images/mockup.png)
 
-This is a blog about the real-life adventures of El Madre. El Madre is...
+This is a blog about the real-life adventures of El Madre. El Madre is a persona on the internet who shares episodes of her life in a fun way!
 
 ## Table of Contents
 
@@ -17,105 +17,129 @@ This is a blog about the real-life adventures of El Madre. El Madre is...
 
 ## Design
 
-The site was created with persons in mind who have not had any point of contact with traditional Indian weddings so far. The aim was to evoke feelings of joy and celebration, and a distant association to India, through colors and fonts. Besides that, the design is kept very simple and minimal as to not distract the user from the quiz and reading and answering the questions.
+The site was created with persons in mind who are looking for some light entertainment. The aim was to evoke feelings of joy and lightness through bright and happy colors and fonts. Besides that, the design is kept rather simple and minimal as to not distract the user from reading the content and navigating the page.
 
 ### Wireframes
 
-The wireframes were made in Figma. A mockup of a mobile screen was chosen since the site was built using the mobile-first approach. The wireframes were kept very simple and the focus was on structure rather than design. In the implementation stage, the countdown field was moved upwards to draw the user's attention to it more. Also, at this point no personalized message is included when the score is displayed. It is a possible future feature.
+The wireframes were made in Balsamiq, and show different pages of the blog on different devices. The wireframes were kept very simple and the focus was on structure rather than design. In the implementation stage, the signup and login pages changed slightly from the wireframes due to remaining with the default built-in designs. The "Categories" and "Favourites" navigation elements were added in line with the functionality of the blog.
 
-![Wireframes for mobile](assets/images/readme-images/wireframes_indian_wedding.png) <br>
+- Homepage<br>
+![Wireframe - Homepage](static/images/readme-images/wireframe-homepage.png) <br>
+
+- A post in detail<br>
+![Wireframe - Homepage](static/images/readme-images/wireframe-postdetail.png) <br>
+
+- Comment section<br>
+![Wireframe - Homepage](static/images/readme-images/wireframe-comments.png) <br>
+
+- Sign Up<br>
+![Wireframe - Homepage](static/images/readme-images/wireframe-signup.png) <br>
+
+- Login<br>
+![Wireframe - Homepage](static/images/readme-images/wireframe-login.png) <br>
 
 ### Font and Colour Choices
-**Fonts:** 'Laila' was chosen as the font for the header and main headings for its playful design with its slight nod to the Indian letters used for Hindi, Devanagari, through its gentle flares and curles at the end of the letter strokes. 'Poppins' makes up the main part of the site due to it being a quite neutral, easy-to-read but still friendly font.
+**Fonts:** 'Roboto' and 'Lato' were chosen as they are quite neutral, easy-to-read but still friendly fonts. This allows the reader to focus on the content.
 
-**Colours:** The colour palette was generated using [mycolor.space](https://mycolor.space/?hex=%23FA00A6&sub=1). The reference colours were picked from the inspiration image (taken from [Pexels](https://www.pexels.com/)) which shows a man with his face full of paint powder, which is common during one of the biggest Indian festivals, Holi, also called the Festival of Colors. Although Holi does not have an association with Indian weddings, the color scheme was chosen as these types of colors are often associated with India more broadly. Furthermore, the colors are bright, vivid and fun, which is an association the quiz would like to evoke.
+**Colours:** The color palette was found by searching for "happy colors" on [color-hex.com](https://www.color-hex.com/). The idea was to have a very bright, airy and light feel to the blog so as to convey happiness and a break from everyday life. A rainbow of pastelly colors evokes a feeling of fun. The colors taken from the color palette were sometimes copied identically, and sometimes made a few shades darker or brighter depending on what the blog needed. In all of this, the question of accessability/contrast and ease with which to read was kept in mind.
 
-Inspiration image: <br>
-<img src="assets/images/readme-images/face-with-holi-colors-compressed.jpg" alt="Face of a man covered in colorful powders" width="300"/> <br>
-![Colour palette](assets/images/readme-images/generic-gradient.png)<br>
-![Picked green color](assets/images/readme-images/picked-color-hashtag015d45.png)<br>
-![Generated squash palette](assets/images/readme-images/squash-palette.png)
+![Colour palette](static/images/readme-images/color-palette.png)<br>
 
-**Images:** No images are displayed on the site itself. As described above, an inspiration image was used to generate the colour palette.
+**Images:** The default placeholder image was chosen for its color palette which also has a mostly bright, white-ish background, with pops of fun pastel colors. All images were taken from [pexels.com](https://www.pexels.com/). Credit details in the [Credits](#credits) section.
+
+- Default placeholder image<br>
+<img src="static/images/default-photo.jpg" alt="Placeholder image" width="400">
 
 ## Features
 
-The site has the basic features of a static website as well as some interactive features written in JavaScript.
+The below section describes the site's features in detail.
+
+CRUD!
 
 - **Header**
-    - The header is always visible throughout the game. It contains the title of the quiz.
-    - It is static, without any interactive elements.<br>
-    ![header](assets/images/readme-images/header.png)
+    - The header is always visible on all pages of the blog. The brand logo is a link to the home page.
+    - On the right-hand side, there is a tag-line of what the blog is about.
+    - Depending on whether a user is logged in or not, the elements in the navigation bar change.
+    - A logged out user sees navigation elements to Home, Register and Login. <br>
+    ![header - logged out](static/images/readme-images/header-login.png)
+    - A logged in user sees navigation elements to Home, Categories, Favourites and Logout. <br>
+    ![header - logged out](static/images/readme-images/header-loggedin.png)
 
-- **Main section**
-    - The main part of the site contains the interactive and changeable elements of the site. 
-    - There is a welcome heading and tagline about the quiz. These elements will disappear as the game progresses but are not interactive.
-    - Below, the interactive elements are shown: a username input field, a "Let's start"-button, and a "How to play"-button.<br>
-    ![Main part of the page](assets/images/readme-images/body.png)<br>
+- **Main section - Home page**
+    - The main part of the homepage contains a display of the three most recent blog posts. 
+    - Each post is displayed with an image, the post's title and the first 20 words of the post's content.
+    - The image is either one chosen and uploaded by the writer of the post, or - if none was chosen - a default image.
+    - A little banner shows the reader who the author of the post is, and what category it belongs to. This hints at additional functionality being available to logged in users.
+    - In the upper right-hand corner a small text informs the reader which user is logged in. If no user is logged in, the text reads "You are not logged in".
+    - Should more than three posts exist, there is a "Next" button at the bottom of the page. Should the user click on the "Next" button, a "Prev" button appears to its left so the user can choose to navigate back to the previous page.<br>
+    ![Main part of the homepage](static/images/readme-images/homepage.png)<br>
 
-- **Username input field and validation**
-    - The username input field with the placeholder text "Type your name" invites the user to input their chosen username.
-    - The username is a required input.
-    - Should the user click "Let's start" without having provided a username, or having provided only spaces, an error message appears prompting the user to "Please fill in a username!".<br>
-    ![Error message if no username was provided](assets/images/readme-images/error-message.png)<br>
+- **Register**
+    - Should a site visitor wish to enjoy extra functionality such as being able to comment, favourite posts or choose a certain category of posts, the user needs to register.
+    - Registering is done via its own page which asks the user to choose a username and a password. Providing an email address is optional. In order to ensure password safety, some guidelines for choosing a good password are displayed.<br>
+    ![Sign up](static/images/readme-images/signup.png)<br>
 
-- **Rules**
-    - If the user would like to know the rules of the game, they can click the "How to play" button.
-    - A modal with the rules opens.
-    - The modal can be used by either clicking the little X in the top right corner of the modal, or clicking anywhere on the page outside the modal<br>
-    ![Rules of the game](assets/images/readme-images/rules.png)<br>
+- **Sign in**
+    - Should a user already have an account, they can log in via the sign in page. 
+    - If they have visited the site before, and asked to be remembered, their user details will be pre-filled.
+    - Should a user not yet have an account, they are redirected to the register page.<br>
+    ![Sign up](static/images/readme-images/signin.png)<br>
 
-- **Let's Start**
-    - If the user feels comfortable to start playing they can click on the "Let's Start" button.
-    - Upon clicking the button, the username input gets validated and - if successful - the game starts.<br>
-    ![Username input field and start and rules buttons](assets/images/readme-images/user-input-field.png)<br>
+- **Post detail - Top of the page**
+    - Upon clicking on any post title, a new page opens up.
+    - The post title, category and date of publishing are displayed at the top next to the post's image.
+    - Right below, a button is displayed. If a post is not yet part of a user's favourites, the button reads "Add to Favourites". Upon clicking it, the post is added to the user's favourites.
+    - If a post is already part of a user's favourites, the button reads "Remove from Favourites". Upon clicking it, the post is removed from the user's favourites.<br>
+    ![Post detail](static/images/readme-images/detail-top.png)<br>
+    ![Remove from favourites button](static/images/readme-images/remove-favourites.png)<br>
 
-- **Timer**
-    - Upon starting the first question, the timer begins counting down from 30 seconds.
-    - The timer stops when an answer is selected.
-    - If no answer is selected within 30 seconds, the answer buttons get disabled and the countdown shows "Time over".<br>
-    ![Timer](assets/images/readme-images/timer.png)<br>
-    ![Time over](assets/images/readme-images/timer-over.png)<br>
 
-- **Question field**
-    - In the question field, a number appears. Currently, it starts with "1." and goes up to "5."
-    - Next to the number, the current question is displayed.<br>
-    ![Question field](assets/images/readme-images/question-field.png)<br>
+- **Post detail - Bottom of the page**
+    - At the end of the blog post, a comment section is shown.
+    - The logged out user can read comments made by other users but cannot comment themselves. A prompt informs them to log in should they wish to comment.
+    - The logged in user also can read comments, can leave comments and edit or delete their own comments. For more information please see in the CRUD section.<br>
+    ![Log in to comment](static/images/readme-images/login-to-comment.png)<br>
+    ![Logged in user comment section](static/images/readme-images/detail-bottom.png)<br>
 
-- **Answer buttons and next button**
-    - Below the question field, 5 answer buttons are displayed.
-    - Each button contains a possible answer.
-    - When the question and buttons first appear, the buttons are of the same color. They change color upon hovering over.
-    - Once an answer is selected, the correct answer is highlighted green.
-    - If an incorrect answer was selected, this incorrectly selected answer is highlighted in red.
-    - Simultaneously, upon selecting an answer, all answer buttons get disabled. A new button, the next button, appears below the answer buttons. This button needs to be clicked in order to proceed to the next question.<br>
-    ![Unselected answer buttons](assets/images/readme-images/answer-buttons.png)<br>
-    ![Selected answer buttons with next button](assets/images/readme-images/selected-answer-buttons-w-next-button.png)<br>
+- **Categories**
+    - Upon clicking on "Categories" in the navbar, a dropdown field with all available categories opens up.
+    - Once a category is chosen, all posts belonging to this category are displayed to the user.
+    - For good UX, the way the posts are displayed is the same as on the homepage and the Favourites page.<br>
+    ![Categories - dropdown](static/images/readme-images/categories.png)<br>
+    ![Categories - page](static/images/readme-images/categories-detail.png)<br>
 
-- **Final score**
-    - After all questions have been answered, the user's final score is displayed.
-    - For personalization, it is displayed next to the user's chosen username.<br>
-    ![Final score](assets/images/readme-images/score.png)<br>
+- **Favourites**
+    - Upon clicking on "Favourites" in the navbar, a new page opens up.
+    - All posts which have been added by the user to their favourites are displayed to the user.
+    - For good UX, the way the posts are displayed is the same as on the homepage and the Categories page.<br>
+    ![Favourites page](static/images/readme-images/favourites-detail.png)<br>
 
-- **Play again or Home buttons**
-    - Below the final score, two buttons appear: the "Play again" button, and the "Home" button.
-    - Clicking the play again button will redirect the user to the first question and the game will start anew.
-    - Clicking the home button will redirect the user to the home screen where a new user name can be chosen, or the rules read again.<br>
-    ![Play again and home buttons](assets/images/readme-images/playagain-and-homebutton.png)<br>
+- **Sign Out and User Feedback**
+    - Upon clicking "Signout" in the navbar, the user is redirected to a sign out page.
+    - On this page, the user is asked whether they really want to sign out, in order to ensure this is the user's intention.
+    - Upon confirming, the user is signed out.
+    - To ensure good UX, a feedback message is displayed to the user, informing them that their action was successful.
+    - These kind of success/error messages are implemented throughout the page, such as when a user adds a post to their favourites, removes a post from their favourites, or comments.<br>
+    ![Sign out](static/images/readme-images/signout-check.png)<br>
+    ![Success message](static/images/readme-images/signout-success.png)<br>
 
 - **Footer**
     - The footer contains a copyright symbol and the author's, ie my, name.
-    - There is a LinkedIn icon. The icon opens in a new tab, making it easy for users to come back to the quiz site.
+    - There are facebook, YouTube and Instagram icons. The icons open in a new tab, making it easy for users to come back to the site.
     - The footer is consistent throughout the pages.
-    ![Footer](assets/images/readme-images/footer.png)
+    ![Footer](static/images/readme-images/footer.png)
 
 ### Possible Future Features
 
 - About Me Page
 
-    - ...
+    - In order to provide the interested user with more information, an about page could be implemented telling the site visitor more about who El Madre is.
 
-## UX
+- 404 Error Page
+
+    - A customized 404 error page could enhance UX even further by providing a meaningful feedback message on what has gone wrong.
+
+## UX - STILL TO BE DONE
 
 ### Site Goals
 
@@ -180,6 +204,7 @@ This site was then deployed on Heroku:
 - Dj3 Cloudinary Storage v0.0.6
 - Urllib3 v1.26.15
 - ChatGPT for writing blog posts for me
+- [Balsamiq](https://balsamiq.com/wireframes/?gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_69kk20n5mqra-HeVpfNmeSClto_fGlIiPCKzduzzLOWiWZe6Il1yXxoCHCsQAvD_BwE) for the wireframes
 
 
 ## Credits
