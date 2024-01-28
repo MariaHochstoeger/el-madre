@@ -14,11 +14,14 @@
 - When creating my categories-dropdown in the navbar, the categories did not display. The reason was that I had used data-toggle="dropdown", which came from older Bootstrap versions. Fixed by changing to data-bs-toggle="dropdown", which is the correct attribute under Bootstrap 5.
 - There were underscores between the icons in the footer. Fixed by removing whitespaces between the Font Awesome icons and their anchor tags.
 - When a logged in user clicked on "Add to favourites" on a post which they had previously already favourited, then the post was removed from the user's favourites. Fixed by changing the content of the button so a user would know that clicking the button again would result in "Remove from Favourites".
+- On mobile view, if the blog post title was too long, the Add to/Remove from Favourites button was not or only partly visible. Solved by adding a media-query adjusting the masthead-height to auto in style.css.
+- On tablets, when looking at posts in detail, the image was sometimes shorter in height than the title. Resolved by restricting the title length to max. 50 characters in the model.
+- On smaller screens, the images were too high. Fixed by adding a media query.
 
 ### Unfixed Bugs
 
 
-- On mobile view, if the blog post title was too long, the Add to/Remove from Favourites button was not or only partly visible.
+
 
 ### Validator Testing
 

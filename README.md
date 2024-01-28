@@ -4,7 +4,7 @@ Visit the live site [here](https://el-madre-82f96d334383.herokuapp.com/).
 
 ![responsive mock-up](assets/images/readme-images/mockup.png)
 
-This is a blog about the adventures of El Madre. El Madre is...
+This is a blog about the real-life adventures of El Madre. El Madre is...
 
 ## Table of Contents
 

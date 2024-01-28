@@ -24,8 +24,8 @@ class Post(models.Model):
     """
     Stores a single blog post entry related to :model:`auth.User` and to :model:`blog.Category`.
     """
-    title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=110, unique=True)
+    title = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=60, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
