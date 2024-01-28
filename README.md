@@ -1,6 +1,6 @@
 # El Madre - A Personal Blog
 
-Visit the live site [here](https://mariahochstoeger.github.io/project2/).
+Visit the live site [here](https://el-madre-82f96d334383.herokuapp.com/).
 
 ![responsive mock-up](assets/images/readme-images/mockup.png)
 
