@@ -54,8 +54,6 @@ The wireframes were made in Balsamiq, and show different pages of the blog on di
 
 The below section describes the site's features in detail.
 
-CRUD!
-
 - **Header**
     - The header is always visible on all pages of the blog. The brand logo is a link to the home page.
     - On the right-hand side, there is a tag-line of what the blog is about.
@@ -147,6 +145,10 @@ CRUD!
 
     - A customized 404 error page could enhance UX even further by providing a meaningful feedback message on what has gone wrong.
 
+- More complex commenting/approval functionality
+
+    - Currently, a user's comment is immediately displayed on the site. The admin has the possibility to revoke approval. Once the approval is revoked, the comment still shows for the user who wrote it, but not for anybody else. Also, the user who wrote the un-approved comment still has CRUD functionality, ie can edit and/or delete the comment. If a user edits a previously un-approved comment, then the comment is - in the current project - immediately displayed again. This is considered acceptable since it gives the user the possibility to rectify any potential mistakes they made in the comment (such as violating community guidelines). However in the future, it could be a feature to turn around the logic for comments that were previously un-approved. Meaning, in such a case, the admin would then have to approve the edited comment, before it would be displayed again. 
+
 ## UX
 
 ### Site Goals
@@ -157,7 +159,7 @@ For the admin, the site wants to make it easy to publish new and manage existing
 
 ### User Stories
 
-There are two types of users on the El Madre blog: site visitors/users, and the site admin.
+There are two types of users on the El Madre blog: site visitors/users, and the site admin. The site was made with these two user groups in mind.
 
 **As a site visitor:**
 
@@ -177,7 +179,8 @@ There are two types of users on the El Madre blog: site visitors/users, and the 
 
 ### ERDs
 
-In order to fulfill the user stories, the ERDs were drawn up to allow all needed functionality:<br>
+In order to fulfill the user stories, the ERDs were drawn up to allow all needed functionality.
+Please note that the post model also contains a variable "featured_image" which takes the value of "CloudinaryField". Unfortunately, I could not figure out how to insert this value in DrawSQL, which the ERD was created in. So it is added on the screenshot.<br>
 ![ERDs](static/images/readme-images/erds.png)
 
 
