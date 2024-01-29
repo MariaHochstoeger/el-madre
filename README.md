@@ -2,7 +2,7 @@
 
 Visit the live site [here](https://el-madre-82f96d334383.herokuapp.com/).
 
-![responsive mock-up](assets/images/readme-images/mockup.png)
+![responsive mock-up](static/images/readme-images/mockup.png)
 
 This is a blog about the real-life adventures of El Madre. El Madre is a persona on the internet who shares episodes of her life in a fun way!
 
@@ -94,12 +94,19 @@ CRUD!
     ![Remove from favourites button](static/images/readme-images/remove-favourites.png)<br>
 
 
-- **Post detail - Bottom of the page**
+- **Post detail - Comment section incl. CRUD**
     - At the end of the blog post, a comment section is shown.
     - The logged out user can read comments made by other users but cannot comment themselves. A prompt informs them to log in should they wish to comment.
-    - The logged in user also can read comments, can leave comments and edit or delete their own comments. For more information please see in the CRUD section.<br>
+    - A little icon and comment counter visually informs the user of the number of published comments a post has.
+    - The logged in user can also read comments, and in addition can leave comments and edit or delete their own:
+        - CREATE: A logged in user can leave a comment by inserting their text and clicking on the Submit button. The comment is then immediately published and for everyone to see.
+        - READ: Any user can read their and other users' comments. Should the admin decide to revoke a comment's approval, the comment is shown as greyed out to the user who wrote it. The comment is not visible to any other users anymore.
+        - UPDATE: The user who wrote a comment can edit their comment - regardless of whether it is in an approved state or not.
+        - DELETE: The user who wrote a comment can choose to delete it. As this action cannot be undone, an additional action by the user is needed to delete a comment.<br>
     ![Log in to comment](static/images/readme-images/login-to-comment.png)<br>
     ![Logged in user comment section](static/images/readme-images/detail-bottom.png)<br>
+    ![Comment with approval revoked](static/images/readme-images/approval-revoked.png)<br>
+    ![Delete comment](static/images/readme-images/delete-comment.png)<br>
 
 - **Categories**
     - Upon clicking on "Categories" in the navbar, a dropdown field with all available categories opens up.
@@ -129,6 +136,7 @@ CRUD!
     - The footer is consistent throughout the pages.
     ![Footer](static/images/readme-images/footer.png)
 
+
 ### Possible Future Features
 
 - About Me Page
@@ -139,31 +147,39 @@ CRUD!
 
     - A customized 404 error page could enhance UX even further by providing a meaningful feedback message on what has gone wrong.
 
-## UX - STILL TO BE DONE
+## UX
 
 ### Site Goals
 
-The site wants to motivate users to play the game and by doing so, learn about the main functions of Indian weddings. The site wants to evoke a happy atmosphere and good feelings.
-Should the user not get all questions right from the start, the site would like to make sure it does not discourage users from trying again by simply stating the score without judging it good or bad.
+The site wants to motivate users to read blog posts about the exciting life of El Madre. The site wants to evoke a happy atmosphere and good feelings.
+The goal is for the user to get a sense of ownership of their own space on the blog which they access by logging in. The additional functionality they can enjoy, such as commenting, choosing from categories or managing favourites, allows for some personalization of the blog.
+For the admin, the site wants to make it easy to publish new and manage existing blog posts, and have authority over comments and categories.
 
 ### User Stories
 
+There are two types of users on the El Madre blog: site visitors/users, and the site admin.
+
 **As a site visitor:**
 
-- I want to know what this site offers at a glance.
-- I want to see a responsive design which looks good on mobile devices as well as on larger screens.
-- I want to be guided through the site by an intuitive design, and not be distracted by unnecessary elements.
-- I want to have a positive, joyful experience.
-- I want to get feedback on my actions such as inputting a username or answering questions.
-- I want to learn about Indian weddings.
-- I want to see how much time is left for answering a question.
-- I want to see my final score.
-- I want to be able to play again, or let a friend play on the same device after I am finished.
+- As a site user I can register an account so that I can benefit from additional functionality such as commenting.
+- As a site user I can view a paginated list of posts so that I have a good overview and can choose which post to view in detail.
+- As a site user I can view a post in full so that I can read its contents.
+- As a logged in site user I can comment on posts so that I can share my view on a given blog post.
+- As a logged in site user I can choose a category of blog posts so that I see those posts which correspond to the topic I am interested in.
+- As a logged in site user I can favourite individual posts so that I can retrieve them with ease.
 
 **As the site administrator:**
 
-- I want to be able to adapt the existing questions or add new questions to the game easily.
-- I want to be able to add potential future features should I so desire.
+- As a site admin I can create, read, update and delete posts so that I can manage the blog content.
+- As a site admin I can publish several draft posts at once so that I can be efficient in my role.
+- As a site admin I can un-approve comments so that quality and appropriate content on the blog is ensured.
+- As a site admin I can select a category for my posts so that posts can be grouped according to topic.
+
+### ERDs
+
+In order to fulfill the user stories, the ERDs were drawn up to allow all needed functionality:<br>
+![ERDs](static/images/readme-images/erds.png)
+
 
 ## Testing
 A comprehensive report on testing done for this project can be found [here](Testing.md).
@@ -184,6 +200,7 @@ This site was then deployed on Heroku:
 
 ## Technologies/Packages Used and Sources
 
+- Main programming languages: Python, HTML, CSS, and JavaScript
 - Django v4.2.1 (version 4 since it is a long-term supported (LTS) release)
 - Django Template Tags and Filters for learning about [truncate](https://www.djangotemplatetagsandfilters.com/filters/truncatewords/)
 - Gunicorn v20.1
@@ -203,8 +220,9 @@ This site was then deployed on Heroku:
 - Cloudinary v1.36.0
 - Dj3 Cloudinary Storage v0.0.6
 - Urllib3 v1.26.15
-- ChatGPT for writing blog posts for me
+- ChatGPT wrote blog posts for me
 - [Balsamiq](https://balsamiq.com/wireframes/?gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_69kk20n5mqra-HeVpfNmeSClto_fGlIiPCKzduzzLOWiWZe6Il1yXxoCHCsQAvD_BwE) for the wireframes
+- [DrawSQL](https://drawsql.app/?via=tai&gclid=CjwKCAiAtt2tBhBDEiwALZuhAFLAmFOxB2XO3NkC-2Zz3Pi1AX4lX-9Ybx_iJxwUXvUOJjO8U7xTpRoCb64QAvD_BwE) for making the ERDs
 
 
 ## Credits
