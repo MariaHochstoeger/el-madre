@@ -180,6 +180,10 @@ body {
     font-weight: 700;
 }
 
+.no-display {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     .card-img-top {
         height: 30vh;

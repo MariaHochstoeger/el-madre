@@ -87,9 +87,11 @@ The below section describes the site's features in detail.
     - Upon clicking on any post title, a new page opens up.
     - The post title, category and date of publishing are displayed at the top next to the post's image.
     - Right below, a button is displayed. If a post is not yet part of a user's favourites, the button reads "Add to Favourites". Upon clicking it, the post is added to the user's favourites.
-    - If a post is already part of a user's favourites, the button reads "Remove from Favourites". Upon clicking it, the post is removed from the user's favourites.<br>
+    - If a post is already part of a user's favourites, the button reads "Remove from Favourites". Upon clicking it, the post is removed from the user's favourites.
+    - In the mobile view, the post's image is not displayed when looking at a post in detail.<br>
     ![Post detail](static/images/readme-images/detail-top.png)<br>
     ![Remove from favourites button](static/images/readme-images/remove-favourites.png)<br>
+    ![Post detail on mobile](static/images/readme-images/mobile-detail.png)<br>
 
 
 - **Post detail - Comment section incl. CRUD**
@@ -213,7 +215,6 @@ This site was then deployed on Heroku:
 - [Random key generator](https://randomkeygen.com/)
 - Summernote v0.8.20.0
 - Bootstrap v5.0.1
-- [Bootstrap Documentation for creating dropdown buttons](https://getbootstrap.com/docs/5.0/components/dropdowns/)
 - Google Fonts
 - Font Awesome
 - Whitenoise v5.3.0
@@ -223,14 +224,14 @@ This site was then deployed on Heroku:
 - Cloudinary v1.36.0
 - Dj3 Cloudinary Storage v0.0.6
 - Urllib3 v1.26.15
-- ChatGPT wrote blog posts for me
-- [Balsamiq](https://balsamiq.com/wireframes/?gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_69kk20n5mqra-HeVpfNmeSClto_fGlIiPCKzduzzLOWiWZe6Il1yXxoCHCsQAvD_BwE) for the wireframes
-- [DrawSQL](https://drawsql.app/?via=tai&gclid=CjwKCAiAtt2tBhBDEiwALZuhAFLAmFOxB2XO3NkC-2Zz3Pi1AX4lX-9Ybx_iJxwUXvUOJjO8U7xTpRoCb64QAvD_BwE) for making the ERDs
-
 
 ## Credits
 - User indigo7220 for the "happy colors Color Palette" made available on [color-hex.com](https://www.color-hex.com/color-palette/7779)
 - [Favicon.io](https://favicon.io/favicon-generator/) for generating a Favicon
+- [Very Academy](https://www.youtube.com/playlist?list=PLOLrQ9Pn6cawWd-5UZM6CIm0uqFXeBcTd) for their tutorial series on how to build a simple blog in Django
+- [Bootstrap Documentation for creating dropdown buttons](https://getbootstrap.com/docs/5.0/components/dropdowns/)
+- [Balsamiq](https://balsamiq.com/wireframes/?gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_69kk20n5mqra-HeVpfNmeSClto_fGlIiPCKzduzzLOWiWZe6Il1yXxoCHCsQAvD_BwE) for the wireframes
+- [DrawSQL](https://drawsql.app/?via=tai&gclid=CjwKCAiAtt2tBhBDEiwALZuhAFLAmFOxB2XO3NkC-2Zz3Pi1AX4lX-9Ybx_iJxwUXvUOJjO8U7xTpRoCb64QAvD_BwE) for making the ERDs
 - Default photo by Jess Bailey Designs on [pexels.com](https://www.pexels.com/photo/two-brown-pencils-on-white-surface-965117/)
 - Photo by Anurag Sharma on [pexels.com](https://www.pexels.com/photo/photo-of-four-people-showing-painted-hands-2728252/)
 - Photo by Steve Johnson on [pexels.com](https://www.pexels.com/photo/orange-yellow-green-and-blue-abstract-painting-1704120/)
@@ -238,6 +239,8 @@ This site was then deployed on Heroku:
 - Photo by Studio Art Smile on [pexels.com](https://www.pexels.com/photo/horizontally-striped-flag-3476860/)
 - Photo by Christina Morillo on [pexels.com](https://www.pexels.com/photo/woman-programming-on-a-notebook-1181359/=)
 - Photo by Carlie Wright on [pexels.com](https://www.pexels.com/photo/kiwi-fruits-cut-in-half-laying-on-pink-surface-with-green-curtain-in-background-10562640/)
+- [ChatGPT](https://chat.openai.com/) wrote the content of the blog posts for me
+- [Code Institute's](https://codeinstitute.net/global/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+AT+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=18265909565&hsa_grp=142347245433&hsa_ad=646574752722&hsa_src=g&hsa_tgt=aud-1599270334980:kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiA2eKtBhDcARIsAEGTG43ORz1h13a2KLlWQpx9pKe36fyJK4x8Gq7OpjnnPzgt_NBkrarutvMaAnHkEALw_wcB) walkthrough project "I think therefore I blog" for the inspiration of a basic structure of a blog
 - My group facilitator Kay Welfare for providing guidance and directing me to focus on the relevant parts all while encouraging me to deliver a good project
 - My Mentor Spencer Barriball for his input and making himself available for questions
 - Myself for putting in the work and effort and spending hours upon hours on fixing "little" bugs

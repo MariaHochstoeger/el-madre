@@ -1,11 +1,12 @@
 ## Testing
 
 - I confirmed that this project is responsive and looks good on various common screen sizes by using the devtools devices toolbar.
-- I have confirmed that the username input validation works. There is an error message if the field is not filled out correctly.
-- I checked that the modal opens upon clicking "How to Play" and can be closed by either clicking the little X, or anywhere on the page outside the modal.
-- I ensured that the timer works correctly, starting at 30 seconds for each new question and stoping once an answer is selected.
-- I made sure that the answer buttons give a correct colour-coded feedback upon selecting and clicking on an answer: red for incorrect, green for correct.
-- I ensured that the "Play again" button takes the user to the start of the quiz, while the "Home" button takes the user to the start page.
+- I confirmed that there is validation when signing up as a new user, ie username and/or password cannot be left empty.
+- I checked that the user is informed about their login status ("You are not logged in" / "You are logged in as [ user ]").
+- I confirmed that the user receives meaningful feedback messages on their actions, such as "You have signed out" or "Successfully signed in as [ user ]".
+- I made sure that only logged in users can choose from Categories or add / remove Favourites.
+- I checked that on signing out, a second layer of confirmation is needed to ensure no accidental sign-out.
+- I ensured that the brand logo acts as a link back to the homepage.
 - I confirmed that header and footer are easily readable and understandable.
 
 ### Fixed Bugs
@@ -20,21 +21,35 @@
 
 ### Unfixed Bugs
 
-
-
+- None.
 
 ### Validator Testing
 
+Please note I only tested code which was written or modified by me. I did not test code that came as templates with packages, such as login.html, logout.html, etc.
+
 - HTML ([W3C Validator](https://validator.w3.org/))
-    - 1 error found: "Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed."
-    - Solution: introduced h4-element to the section and set it to display = none.
+    - **base.html and index.html:**<br>
+    ![base and index.html](static/images/readme-images/index-errors.png)<br>
+    - Solution: removed trailing slashes. --> NO ERRORS
+
+    - **post-detail.html:**<br>
+    ![post-detail.html](static/images/readme-images/detail-errors.png)<br>
+    - Solution: added an h6-element and set display to none. --> NO ERRORS
+    
+    - **category.html:**<br>
+    ![category.html](static/images/readme-images/category-errors.png)<br>
+    - Solution: removed "class=" and trailing slashes. --> NO ERRORS
+
+    - **favourites.html:**<br>
+    ![favourites.html](static/images/readme-images/favourites-errors.png)<br>
+    - Solution: removed "class=" and trailing slashes. --> NO ERRORS
 
 - CSS ([Jigsaw](https://jigsaw.w3.org/css-validator/))
     - No error found.
 
 - JS ([JS Hint](https://jshint.com/))
-    - 1 error found: one unnecessary semicolon.
-    - Solution: deleted unnecessary semicolon.
+    - 1 error found in comments.js: "One undefined variable: line 5 bootstrap".
+    - Solution: Added /* global bootstrap */ comment at the top of the file. --> NO ERRORS
 
 - Performance, Accessibility, Best Practices, SEO (Lighthouse Chrome Dev Tools)
     - Accessibility is at a still high 94 due to some color contrasts not being as strong as they could be. After discussing with my group facilitator and mentor, it was decided to keep it as is.<br>
