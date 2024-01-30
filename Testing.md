@@ -55,56 +55,57 @@ Please note I only tested code which was written or modified by me. I did not te
 
 - Python ([CI PEP8 Python Linter](https://pep8ci.herokuapp.com/))
     - **blog/admin.py:**<br>
-    - Errors: lines too long, too few lines after Classes, trailing whitespaces
-    - Solution: broke up lines, added lines, removed whitespaces --> NO ERRORS
+        - Errors: lines too long, too few lines after Classes, trailing whitespaces
+        - Solution: broke up lines, added lines, removed whitespaces --> NO ERRORS
 
     - **blog/forms.py:**<br>
-    - Errors: no errors found
+        - Errors: no errors found
 
     - **blog/models.py:**<br>
-    - Errors: lines too long, missing line at the end, trailing whitespaces
-    - Solution: broke up lines, added line, removed whitespaces --> NO ERRORS
+        - Errors: lines too long, missing line at the end, trailing whitespaces
+        - Solution: broke up lines, added line, removed whitespaces --> NO ERRORS
 
     - **blog/urls.py:**<br>
-    - Errors: indentations too short
-    - Solution: added indentations --> NO ERRORS
+        - Errors: indentations too short
+        - Solution: added indentations --> NO ERRORS
 
     - **blog/views.py:**<br>
-    - Errors: lines too long, missing line at the end, trailing whitespaces
-    - Solution: broke up lines, added line, removed whitespaces --> NO ERRORS
+        - Errors: lines too long, missing line at the end, trailing whitespaces
+        - Solution: broke up lines, added line, removed whitespaces --> NO ERRORS
 
     - **elmadre/settings.py:**<br>
-    - Errors: lines too long, missing line at the end, trailing whitespaces, missing indentation
-    - Solution: broke up lines, added line, removed whitespaces, added indentations --> NO ERRORS
+        - Errors: lines too long, missing line at the end, trailing whitespaces, missing indentation
+        - Solution: broke up lines, added line, removed whitespaces, added indentations --> NO ERRORS
 
     - **elmadre/urls.py:**<br>
-    - Errors: one line containing only whitespaces
-    - Solution: removed the line --> NO ERRORS
+        - Errors: one line containing only whitespaces
+        - Solution: removed the line --> NO ERRORS
 
 - Performance, Accessibility, Best Practices, SEO (Lighthouse Chrome Dev Tools)
-    - Accessibility is at a still high 94 due to some color contrasts not being as strong as they could be. After discussing with my group facilitator and mentor, it was decided to keep it as is.<br>
-    - ![Lighthouse rating](assets/images/readme-images/performance-lighthouse.png)<br>
+    - Performance was mediocre in the Lighthouse test, with 80 on desktop and 73 on mobile. It was still considered acceptable.
+    - The other parameters tested well.
+    - For desktop:<br>
+    ![Lighthouse rating - desktop](static/images/readme-images/lighthouse-desktop.png)<br>
+    - For mobile:<br>
+    ![Lighthouse rating - mobile](static/images/readme-images/lighthouse-mobile.png)<br>
 
 ### Browser Testing (section adapted from Kay Welfare, results are my own)
 
 **Layout:** Testing layout and appearance of site for consistency throughout browsers.
 
-**Functionality:** Ensuring all links, navigation and form submit functions as expected throughout browsers.
+**Functionality:** Ensuring all links, navigation, buttons and form submit functions work as expected throughout browsers.
 
 | Browser     | Layout      | Functionality |
 | :---------: | :----------:| :-----------: |
 | Chrome      | ✔          | ✔             |
 | Edge        | ✔          | ✔             |
 | Firefox     | ✔          | ✔             |
-| Safari*     | ✔          | ✔**           |
-| IE          |deprecated by Microsoft, not tested|
-
-The timer seems to start with a slight delay. In order to optimize the timer's start, the respective function was placed far up in the code to prevent as much as possible that other code is executed before it. Since the slight delay only means that on the one hand, the user gets a bit more time, and on the other hand, the user's attention gets drawn to the time-pressure more, it was deemed acceptable. Also, the lighthouse report revealed a performance rating of 99.
+| Safari*     | ✔          | ✔             |
 
 *Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.<br>
-**On mobile (which I reviewed), modals (error message or rules) can only be closed by clicking on the little X, not by clicking on the screen outside the modal. As there are two options for the same result, and one works completely fine, it was deemed acceptable.
 
-### Manual Testing (section adapted from Kay Welfare, results are my own)
+
+### Manual Testing (section adapted from Kay Welfare, results are my own) - TBD
 
 | Feature     | Expect      | Action        | Result |
 | :---------: | :----------:| :-----------: | :-----:|
@@ -125,12 +126,13 @@ The timer seems to start with a slight delay. In order to optimize the timer's s
 
 | Expectation                         | Result                          |
 | :---------------------------------: | :------------------------------:|
-| I want to know what this site offers at a glance. | As a visitor, I can see the header which tells me the topic of the site, and a message telling me that this is a game |
-| I want to see a responsive design which looks good on mobile devices as well as on larger screens. | As a visitor, I have a good view of the site on mobile device without overflow or side-scrolling |
-| I want to be guided through the site by an intuitive design, and not be distracted by unnecessary elements. | As a visitor, all options I can choose from, such as inputting a username, or learning the rules of the game, or choosing an answer, are displayed on one page |
-| I want to have a positive, joyful experience. | As a visitor, I am greeted by a joy- and colorful design which is consistent throughout the game |
-| I want to get feedback on my actions such as inputting a username or answering questions. | As a visitor, I get an error message if I forgot to put in a username. I also get color-coded feedback whether my chosen answer is correct or not |
-| I want to learn about Indian weddings. | As a visitor, I can take my time to read through the answers and learn about different functions of Indian weddings |
-| I want to see how much time is left for answering a question. | As a visitor, I see a countdown showing the seconds left for answering a question. |
-| I want to see my final score. | As a visitor, I see my final score after answering all questions |
-| I want to be able to play again, or let a friend play on the same device after I am finished. | As a visitor, I can choose to play again after finishing the quiz, or choose a new username by going back to the home page |
+| As a site user I can register an account so that I can benefit from additional functionality such as commenting. | As a visitor, I can see a Register link in the navbar which takes me to a registration site. Registration is straightforward and the registration form gives me helpful feedback prompts. |
+| As a site user I can view a paginated list of posts so that I have a good overview and can choose which post to view in detail. | As a visitor, I see three posts displayed on the home page. It is easy to navigate to the next page should I wish to do so. By clicking on the title, I can read the full post. |
+| As a site user I can view a post in full so that I can read its contents. | As a visitor, upon clicking on a post title, I can read the post in full. |
+| As a logged in site user I can comment on posts so that I can share my view on a given blog post. | As a logged in visitor, I can comment on the posts of my choice. I can also edit and delete my comments. |
+| As a logged in site user I can choose a category of blog posts so that I see those posts which correspond to the topic I am interested in. | As a logged in visitor, I can choose the category I am interested in from a dropdown menu in the navigation bar. Upon clicking on a category, all posts belonging to that category are displayed to me. |
+| As a logged in site user I can favourite individual posts so that I can retrieve them with ease. | As a logged in visitor, I can add posts to my favourites by clicking the corresponding button in the detailed post view. I can remove a post from my favourites in the same way. Upon clicking on Favourites in the navbar, I see all posts I have favourited. |
+| As a site admin I can create, read, update and delete posts so that I can manage the blog content. | As a site admin, I can create, read, update and delete posts from the admin panel by clicking on Posts. |
+| As a site admin I can publish several draft posts at once so that I can be efficient in my role. | As a site admin, I can create several posts in draft mode and then choose to publish them all at once by selecting them and then choosing "Mark selected posts as published" in the dropdown menu. |
+| As a site admin I can un-approve comments so that quality and appropriate content on the blog is ensured. | As a site admin, I can revoke approval of select comments by clicking on the comment and then un-ticking the Approval box |
+| As a site admin I can select a category for my posts so that posts can be grouped according to topic. | As a site admin, I can select a category for my post by clicking on a dropdown menu. I can also create new categories by adding on under Categorys [ sic! ]. |
