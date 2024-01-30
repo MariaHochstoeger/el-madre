@@ -40,6 +40,8 @@ body {
 
 .card-img-top {
     height: 50vh;
+    object-fit: cover;  /* Ensure the image covers the entire container */
+    object-position: center;  /*Center the image within the container*/
 }
 
 .image-container {

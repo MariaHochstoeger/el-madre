@@ -39,7 +39,9 @@ body {
 }
 
 .card-img-top {
-    height: 50vh;
+    height: 300px;
+    object-fit: cover;  /* Ensure the image covers the entire container */
+    object-position: center;  /*Center the image within the container*/
 }
 
 .image-container {
@@ -185,9 +187,9 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    .card-img-top {
+    /* .card-img-top {
         height: 30vh;
-    }
+    } */
     
     .masthead {
         height: auto;
