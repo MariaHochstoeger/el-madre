@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 import dj_database_url
-# to ensure there is no error when deploying on Heroku 
+# to ensure there is no error when deploying on Heroku
 # since env.py doesn't exist there as it is added to .gitignore
 if os.path.isfile('env.py'):
     import env
@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-mariahochstoege-elmadre-2ehblpit216.ws-eu107.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-mariahochstoege-elmadre-2ehblpit216.ws-eu107.gitpod.io',
+                 '.herokuapp.com']
 
 
 # Application definition
@@ -54,7 +55,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_summernote',
     'cloudinary',
-    'blog', # install blog app
+    'blog',  # install blog app
 ]
 
 SITE_ID = 1
@@ -110,7 +111,8 @@ WSGI_APPLICATION = 'elmadre.wsgi.application'
 # }
 
 # Connect to environment variable DATABASE_URL from env.py
-# Value from DATABASE_URL is parsed with dj_database_url so Django can work with the value
+# Value from DATABASE_URL is parsed with dj_database_url
+# so Django can work with the value
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -155,8 +157,8 @@ USE_I18N = True
 USE_TZ = True
 
 MESSAGE_TAGS = {
-messages.SUCCESS: 'alert-success',
-messages.ERROR: 'alert-danger',
+    messages.SUCCESS: 'alert-success',
+    messages.ERROR: 'alert-danger',
 }
 
 

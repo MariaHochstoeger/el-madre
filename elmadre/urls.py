@@ -23,5 +23,4 @@ urlpatterns = [
     path("summernote/", include("django_summernote.urls")),
     # 'include' tells Django to look in blog/urls.py for urlpatterns
     path("", include("blog.urls"), name="blog-urls"),
-    
 ]

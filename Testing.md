@@ -25,7 +25,7 @@
 
 ### Validator Testing
 
-Please note I only tested code which was written or modified by me. I did not test code that came as templates with packages, such as login.html, logout.html, etc.
+Please note I only tested code which was written or modified by me. I did not test code that came pre-installed or as templates with packages, such as login.html, logout.html, etc. or tests.py etc.
 
 - HTML ([W3C Validator](https://validator.w3.org/))
     - **base.html and index.html:**<br>
@@ -50,6 +50,34 @@ Please note I only tested code which was written or modified by me. I did not te
 - JS ([JS Hint](https://jshint.com/))
     - 1 error found in comments.js: "One undefined variable: line 5 bootstrap".
     - Solution: Added /* global bootstrap */ comment at the top of the file. --> NO ERRORS
+
+- Python ([CI PEP8 Python Linter](https://pep8ci.herokuapp.com/))
+    - **blog/admin.py:**<br>
+    - Errors: lines too long, too few lines after Classes, trailing whitespaces
+    - Solution: broke up lines, added lines, removed whitespaces --> NO ERRORS
+
+    - **blog/forms.py:**<br>
+    - Errors: no errors found
+
+    - **blog/models.py:**<br>
+    - Errors: lines too long, missing line at the end, trailing whitespaces
+    - Solution: broke up lines, added line, removed whitespaces --> NO ERRORS
+
+    - **blog/urls.py:**<br>
+    - Errors: indentations too short
+    - Solution: added indentations --> NO ERRORS
+
+    - **blog/views.py:**<br>
+    - Errors: lines too long, missing line at the end, trailing whitespaces
+    - Solution: broke up lines, added line, removed whitespaces --> NO ERRORS
+
+    - **elmadre/settings.py:**<br>
+    - Errors: lines too long, missing line at the end, trailing whitespaces, missing indentation
+    - Solution: broke up lines, added line, removed whitespaces, added indentations --> NO ERRORS
+
+    - **elmadre/urls.py:**<br>
+    - Errors: one line containing only whitespaces
+    - Solution: removed the line --> NO ERRORS
 
 - Performance, Accessibility, Best Practices, SEO (Lighthouse Chrome Dev Tools)
     - Accessibility is at a still high 94 due to some color contrasts not being as strong as they could be. After discussing with my group facilitator and mentor, it was decided to keep it as is.<br>

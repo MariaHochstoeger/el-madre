@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic # import generic django view
+from django.views import generic  # import generic django view
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Post, Comment, Category # import Post, Comment and Category models from models.py
-from .forms import CommentForm # import CommentForm from forms.py
+# import Post, Comment and Category models from models.py
+from .models import Post, Comment, Category
+from .forms import CommentForm  # import CommentForm from forms.py
 
 # VIEWS
+
 
 # Class-based views
 class PostList(generic.ListView):
@@ -34,12 +36,14 @@ class PostList(generic.ListView):
 
 class CatListView(ListView):
     """
-    Display a list of published :model:`blog.Post` entries belonging to a specific category.
+    Display a list of published :model:`blog.Post` entries
+    belonging to a specific category.
 
     **Context**
 
     ``catlist``
-        A dictionary with keys 'cat' for the category name and 'posts' for a list of :model:`blog.Post` instances.
+        A dictionary with keys 'cat' for the category name
+        and 'posts' for a list of :model:`blog.Post` instances.
 
     **Template:**
 
@@ -51,7 +55,11 @@ class CatListView(ListView):
     def get_queryset(self):
         content = {
             'cat': self.kwargs['category'],
-            'posts': Post.objects.filter(category__name=self.kwargs['category']).filter(status=1)
+            'posts': (
+             Post.objects
+             .filter(category__name=self.kwargs['category'])
+             .filter(status=1)
+            )
         }
         return content
 
@@ -143,7 +151,8 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request,
+                                 messages.ERROR, 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -167,7 +176,9 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request,
+                             messages.ERROR,
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -205,11 +216,13 @@ def favourite_add(request, id):
     if post.favourites.filter(id=request.user.id).exists():
         post.favourites.remove(request.user)
         favourite_status = False
-        messages.add_message(request, messages.SUCCESS, 'Removed from your favourites!')
+        messages.add_message(request,
+                             messages.SUCCESS, 'Removed from your favourites!')
     else:
         post.favourites.add(request.user)
         favourite_status = True
-        messages.add_message(request, messages.SUCCESS, 'Added to your favourites!')
+        messages.add_message(request,
+                             messages.SUCCESS, 'Added to your favourites!')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
