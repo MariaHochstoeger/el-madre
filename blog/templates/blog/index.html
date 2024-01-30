@@ -19,7 +19,7 @@
                                 <img class="card-img-top" src="{% static 'images/default-photo.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <!-- Tags for displaying author and category -->
                                 <div class="image-flash">

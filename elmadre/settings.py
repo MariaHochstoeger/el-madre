@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 import dj_database_url
+import cloudinary
 # to ensure there is no error when deploying on Heroku
 # since env.py doesn't exist there as it is added to .gitignore
 if os.path.isfile('env.py'):
@@ -31,7 +32,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-mariahochstoege-elmadre-2ehblpit216.ws-eu107.gitpod.io',
                  '.herokuapp.com']
@@ -160,6 +161,11 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success',
     messages.ERROR: 'alert-danger',
 }
+
+# Add cloudinary config to ensure https instead of http
+cloudinary.config(
+    secure=True,
+)
 
 
 # Static files (CSS, JavaScript, Images)

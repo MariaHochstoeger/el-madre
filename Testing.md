@@ -18,6 +18,8 @@
 - On mobile view, if the blog post title was too long, the Add to/Remove from Favourites button was not or only partly visible. Solved by adding a media-query adjusting the masthead-height to auto in style.css.
 - On tablets, when looking at posts in detail, the image was sometimes shorter in height than the title. Resolved by restricting the title length to max. 50 characters in the model.
 - On smaller screens, the images were too high. Fixed by adding a media query.
+- Lighthouse report punished my Best Practices score for the aspect ratios of the images being off. Fixed by adding code in css to cover the image's container and center the image.
+- Lighthouse report punished my Best Practices score for the cloudinary images loading via HTTP and not HTTPS. Fixed - after spending lots of time - by adding a cloudinary config code to settings.py and setting "secure=True".
 
 ### Unfixed Bugs
 

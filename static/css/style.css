@@ -6,7 +6,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #df9ffd;
+    color: #d579ff;
 }
 
 .thin {
@@ -78,7 +78,7 @@ body {
 
 .masthead-text {
     background-color: #ffee8d;
-    color: #df9ffd;
+    color: #d579ff;
     position: relative;
 }
 
@@ -103,12 +103,12 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #df9ffd;
+    color: #d579ff;
 }
 
 .post-link:hover,
 .page-link {
-    color: #df9ffd;
+    color: #d579ff;
 }
 
 .post-title {
@@ -187,9 +187,9 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    /* .card-img-top {
+    .card-img-top {
         height: 30vh;
-    } */
+    }
     
     .masthead {
         height: auto;
