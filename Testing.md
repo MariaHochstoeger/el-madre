@@ -109,18 +109,23 @@ Please note I only tested code which was written or modified by me. I did not te
 
 | Feature     | Expect      | Action        | Result |
 | :---------: | :----------:| :-----------: | :-----:|
-| **Username input field**   | As a user, I can input my chosen username   | Various usernames were put in  | Username inputs were accepted |
-| **Let's Start! Button w/o username filled in**  | When clicked, an error message will appear prompting the user to fill in a name  | Clicked Let's Start! without putting in a username | Error message appeared |
-| **Let's Start! Button with username filled in** | When clicked, the game will start  | Filled in a username and clicked "Let's start!" | Game starts |
-| **How to play Button** | When clicked, a modal will open with the rules | Click How to play | Modal containing the rules of the game opens |
-| **Rules modal and error message** | Rules/Error message will close when clicking the little X, or outside of the modal | Clicked X, and outside the modal | The modal closed |
-| **Timer - select answer** | Timer will countdown the seconds. Upon selection of an answer, the timer stops | Selected an answer within the 30 seconds countdown | Timer stopped |
-| **Timer - not select answer** | Timer will countdown the seconds. Upon expiry of the time, answer options get disabled | Let the countdown run out | Answer options got disabled |
-| **Answer buttons** | When clicked, receive feedback on whether answer was correct/incorrect | Clicked various answer buttons | Buttons highlight orange when hovered over. Upon clicking, buttons get disabled and the correct answer is highlighted green. Incorrect answer, if chosen, is highlighted red |
-| **Next button** | Take user to next question | Click the button | Next question is displayed. After the last question, final score is displayed. |
-| **Play again button** | Take user back to first question and reset the score | Click the button | First question is displayed. After answering all questions, new score is displayed. |
-| **Home button** | Take user back to the home page | Click the button | Home page is displayed. User can choose new username |
-| **LinkedIn icon in footer** | LinkedIn will open in a new tab | Click the icon | LinkedIn profile of the page's author opens in new tab |
+| **Brand link**   | When clicked, the user is taken back to the home page | Clicked on brand link  | Return to home page |
+| **Register link**  | When clicked, the user is forwarded to a page where they can sign up  | Clicked on Register | Sign Up page appears |
+| **Sign Up button** | When filling in a username and a password, and clicking on "Sign Up", an account is created  | Filled in a username and a password and clicked on "Sign Up" | New user is created |
+| **Login link** | When entering a previously registered username and password, and clicking "Sign In", the user is signed in | Entered username and password, and clicked "Sign In" | User is signed in |
+| **Meaningful feedback messages** | Upon taking an action, such as signing in, a feedback message is displayed to the user, which can be closed by clicking the little X | Signed in | Modal with feedback message about successful login opens; can be closed by clicking on the little X |
+| **Navigating blog posts** | When clicking on a NEXT or PREV button on the home page, the next or previous page of blog posts appears | Clicked on the NEXT and PREV buttons |Next/Previous three blog posts appear |
+| **Opening blog posts** | When clicking on a title, a blog post opens in full | Clicked on a blog post's title | Blog post opens in full |
+| **Add to favourites** | Upon clicking on "Add to Favourites" a blog post is added to the user's favourites | Clicked "Add to Favourites" | Success message appears "Removed from your favourites!" |
+| **Remove from favourites** | Upon clicking on "Remove from Favourites" a blog post is removed from the user's favourites | Clicked "Remove from Favourites" | Success message appears "Added to your favourites!" |
+| **Favourites link** | When clicked, dropdown menu of all categories opens; upon choosing a category, all posts of this category are displayed | Clicked Categories link and then chose each category after the other | All posts belonging to the respective category were displayed |
+| **Categories link** | When clicked, a page of all the user's favourite posts appears | Clicked Favourites link | All posts markes as Favourite by the user appear |
+| **Leaving a comment - blank** | When clicking "Submit" without entering a comment, a prompt tells the user what to do | Clicked "Submit" without entering any content in the Body field | Prompt gets displayed: "Please fill out this field." |
+| **Leaving a comment** | When entering content into the Body field and clicking "Submit", the comment gets displayed, and the comment count increases | Clicked "Submit" after entering content in the Body field | Feedback message appears: "Thank you for your comment!"; the comment appears below the blog post and the counter increases |
+| **Editing a comment** | When clicking "Edit" below one of the user's own comments, the comment gets displayed in the Body field, and can be edited; after editing and clicking "Update", the edited comment is displayed below the blog post | Clicked "Edit", edited the comment, and clicked "Update" | The edited comment is displayed below the blog post and a success message displayed: "Comment Updated!" |
+| **Deleting a comment** | When clicking "Delete" below one of the user's own comments, the comment gets deleted | Clicked "Delete" | A modal pops up asking the user to confirm that they want to delete the comment; clicked "Delete"; success message displays: "Comment deleted!" |
+| **Logout link** | Upon clicking, the user is logged out | Clicked the Logout link | A confirmation question is displayed to the user whether they really want to log out; upon clicking "Sign Out", a success message is displayed: "You have signed out." |
+| **Facebook/YouTube/Instagram icons in footer** | Upon clicking, the respective social media site will open in a new tab | Clicked all the icon | The respective site opens in new tab |
 
 ### Testing User Stories (section adapted from Kay Welfare, results are my own)
 
