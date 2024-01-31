@@ -13,8 +13,9 @@ This is a blog about the real-life adventures of El Madre. El Madre is a persona
 3. [Features](#features)
 4. [UX](#ux)
 5. [Testing](#testing)
-6. [Sources](#sources)
-7. [Credits](#credits)
+6. [Deployment](#deployment)
+7. [Technologies](#technologies)
+8. [Credits](#credits)
 
 ## Design
 
@@ -53,7 +54,7 @@ The wireframes were made in Balsamiq, and show different pages of the blog on di
 
 ## Agile
 
-At the start of this project, a Project titles "El Madre Blog" was created on GitHub and linked to the El Madre repository. This El Madre Blog Project was used as a kanban board to keep track of user stories, to dos, and the timeline. The kanban board can be found [here](https://github.com/users/MariaHochstoeger/projects/3).
+At the start of this project, a Project titled "El Madre Blog" was created on GitHub and linked to the El Madre repository. This El Madre Blog Project was used as a kanban board to keep track of user stories, to dos, and the timeline. The kanban board can be found [here](https://github.com/users/MariaHochstoeger/projects/3).
 
 In total, there were 10 user stories which were moved throughout the development cycle from "To Do" to "In Progress" to "Done".
 
@@ -83,7 +84,7 @@ The below section describes the site's features in detail.
     ![header - logged out](static/images/readme-images/header-loggedin.png)
 
 - **Main section - Home page**
-    - The main part of the homepage contains a display of the three most recent blog posts. 
+    - The main part of the home page contains a display of the three most recent blog posts. 
     - Each post is displayed with an image, the post's title and the first 20 words of the post's content.
     - The image is either one chosen and uploaded by the writer of the post, or - if none was chosen - a default image.
     - A little banner shows the reader who the author of the post is, and what category it belongs to. This hints at additional functionality being available to logged in users.
@@ -99,7 +100,7 @@ The below section describes the site's features in detail.
 - **Sign in**
     - Should a user already have an account, they can log in via the sign in page. 
     - If they have visited the site before, and asked to be remembered, their user details will be pre-filled.
-    - Should a user not yet have an account, they are redirected to the register page.<br>
+    - Should a user not yet have an account, they are provided with a link to the register page.<br>
     ![Sign up](static/images/readme-images/signin.png)<br>
 
 - **Post detail - Top of the page**
@@ -107,6 +108,7 @@ The below section describes the site's features in detail.
     - The post title, category and date of publishing are displayed at the top next to the post's image.
     - Right below, a button is displayed. If a post is not yet part of a user's favourites, the button reads "Add to Favourites". Upon clicking it, the post is added to the user's favourites.
     - If a post is already part of a user's favourites, the button reads "Remove from Favourites". Upon clicking it, the post is removed from the user's favourites.
+    - If a user is not logged in and clicks on the "Add to Favourites" button, they are redirected to the Sign Up page, indicating that a user needs to be logged in to enjoy the Favourites functionality.
     - In the mobile view, the post's image is not displayed when looking at a post in detail.<br>
     ![Post detail](static/images/readme-images/detail-top.png)<br>
     ![Remove from favourites button](static/images/readme-images/remove-favourites.png)<br>
@@ -150,8 +152,8 @@ The below section describes the site's features in detail.
     ![Success message](static/images/readme-images/signout-success.png)<br>
 
 - **Footer**
-    - The footer contains a copyright symbol and the author's, ie my, name.
-    - There are facebook, YouTube and Instagram icons. The icons open in a new tab, making it easy for users to come back to the site.
+    - The footer contains a copyright symbol and the page author's, ie my, name.
+    - There are Facebook, YouTube and Instagram icons. The icons open in a new tab, making it easy for users to come back to the site.
     - The footer is consistent throughout the pages.
     ![Footer](static/images/readme-images/footer.png)
 
@@ -200,7 +202,7 @@ There are two types of users on the El Madre blog: site visitors/users, and the 
 
 ### ERDs
 
-In order to fulfill the user stories, the ERDs were drawn up to allow all needed functionality.
+In order to fulfill the user stories, the ERDs were drawn up to allow all needed functionality in the models.<br>
 Please note that the post model also contains a variable "featured_image" which takes the value of "CloudinaryField". Unfortunately, I could not figure out how to insert this value in DrawSQL, which the ERD was created in. So it is added on the screenshot.<br>
 ![ERDs](static/images/readme-images/erds.png)
 
@@ -222,7 +224,7 @@ This site was then deployed on Heroku:
 - In the deploy tab, selected "GitHub" as deployment method. Searched for my project and connected the app to it.
 - Deployed by choosing "Manual deploy".
 
-## Technologies/Packages Used and Sources
+## Technologies
 
 - Main programming languages: Python, HTML, CSS, and JavaScript
 - Django v4.2.1 (version 4 since it is a long-term supported (LTS) release)
@@ -260,6 +262,7 @@ This site was then deployed on Heroku:
 - Photo by Carlie Wright on [pexels.com](https://www.pexels.com/photo/kiwi-fruits-cut-in-half-laying-on-pink-surface-with-green-curtain-in-background-10562640/)
 - [ChatGPT](https://chat.openai.com/) wrote the content of the blog posts for me
 - [Code Institute's](https://codeinstitute.net/global/full-stack-software-development-diploma/?utm_term=code%20institute&utm_campaign=CI+-+AT+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=18265909565&hsa_grp=142347245433&hsa_ad=646574752722&hsa_src=g&hsa_tgt=aud-1599270334980:kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiA2eKtBhDcARIsAEGTG43ORz1h13a2KLlWQpx9pKe36fyJK4x8Gq7OpjnnPzgt_NBkrarutvMaAnHkEALw_wcB) walkthrough project "I think therefore I blog" for the inspiration of a basic structure of a blog
+- Slack User [David Docksey](https://code-institute-room.slack.com/team/U043S9EEY5T) for showing me how to ensure that Cloudinary images are loaded securely via HTTPS
 - My group facilitator Kay Welfare for providing guidance and directing me to focus on the relevant parts all while encouraging me to deliver a good project
 - My Mentor Spencer Barriball for his input and making himself available for questions
 - Myself for putting in the work and effort and spending hours upon hours on fixing "little" bugs

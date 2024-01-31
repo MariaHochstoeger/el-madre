@@ -6,7 +6,6 @@
 - I confirmed that the user receives meaningful feedback messages on their actions, such as "You have signed out" or "Successfully signed in as [ user ]".
 - I made sure that only logged in users can choose from Categories or add / remove Favourites.
 - I checked that on signing out, a second layer of confirmation is needed to ensure no accidental sign-out.
-- I ensured that the brand logo acts as a link back to the homepage.
 - I confirmed that header and footer are easily readable and understandable.
 
 ### Fixed Bugs
@@ -14,7 +13,7 @@
 - When creating my categories, the site did not display correctly when appending /category/one-of-my-categories to the url even though the url was constructed correctly. The solution was that in the class CatListView(ListView), the variable template_name was incorrectly set to 'category.html', while the correct path was template_name = 'blog/category.html'.
 - When creating my categories-dropdown in the navbar, the categories did not display. The reason was that I had used data-toggle="dropdown", which came from older Bootstrap versions. Fixed by changing to data-bs-toggle="dropdown", which is the correct attribute under Bootstrap 5.
 - There were underscores between the icons in the footer. Fixed by removing whitespaces between the Font Awesome icons and their anchor tags.
-- When a logged in user clicked on "Add to favourites" on a post which they had previously already favourited, then the post was removed from the user's favourites. Fixed by changing the content of the button so a user would know that clicking the button again would result in "Remove from Favourites".
+- For a logged in user, the button on top of a detailed post view still read "Add to favourites" even after clicking it. However, when clicking "Add to Favourites" on a post which the user had previously already favourited, the post was then removed from the user's favourites. Fixed by changing the content of the button so a user would know that clicking the button again would result in "Remove from Favourites".
 - On mobile view, if the blog post title was too long, the Add to/Remove from Favourites button was not or only partly visible. Solved by adding a media-query adjusting the masthead-height to auto in style.css.
 - On tablets, when looking at posts in detail, the image was sometimes shorter in height than the title. Resolved by restricting the title length to max. 50 characters in the model.
 - On smaller screens, the images were too high. Fixed by adding a media query.
@@ -105,7 +104,7 @@ Please note I only tested code which was written or modified by me. I did not te
 *Only available to me on iPhone. My mentor kindly reviewed the site for me in Safari on desktop.<br>
 
 
-### Manual Testing (section adapted from Kay Welfare, results are my own) - TBD
+### Manual Testing (section adapted from Kay Welfare, results are my own)
 
 | Feature     | Expect      | Action        | Result |
 | :---------: | :----------:| :-----------: | :-----:|
@@ -116,13 +115,13 @@ Please note I only tested code which was written or modified by me. I did not te
 | **Meaningful feedback messages** | Upon taking an action, such as signing in, a feedback message is displayed to the user, which can be closed by clicking the little X | Signed in | Modal with feedback message about successful login opens; can be closed by clicking on the little X |
 | **Navigating blog posts** | When clicking on a NEXT or PREV button on the home page, the next or previous page of blog posts appears | Clicked on the NEXT and PREV buttons |Next/Previous three blog posts appear |
 | **Opening blog posts** | When clicking on a title, a blog post opens in full | Clicked on a blog post's title | Blog post opens in full |
-| **Add to favourites** | Upon clicking on "Add to Favourites" a blog post is added to the user's favourites | Clicked "Add to Favourites" | Success message appears "Removed from your favourites!" |
-| **Remove from favourites** | Upon clicking on "Remove from Favourites" a blog post is removed from the user's favourites | Clicked "Remove from Favourites" | Success message appears "Added to your favourites!" |
-| **Favourites link** | When clicked, dropdown menu of all categories opens; upon choosing a category, all posts of this category are displayed | Clicked Categories link and then chose each category after the other | All posts belonging to the respective category were displayed |
-| **Categories link** | When clicked, a page of all the user's favourite posts appears | Clicked Favourites link | All posts markes as Favourite by the user appear |
+| **Add to favourites** | Upon clicking on "Add to Favourites" a blog post is added to the user's favourites | Clicked "Add to Favourites" | Success message appears "Added to your favourites!" |
+| **Remove from favourites** | Upon clicking on "Remove from Favourites" a blog post is removed from the user's favourites | Clicked "Remove from Favourites" | Success message appears "Removed from your favourites!" |
+| **Categories link** | When clicked, dropdown menu of all categories opens; upon choosing a category, all posts of this category are displayed | Clicked Categories link and then chose each category after the other | All posts belonging to the respective category were displayed |
+| **Favourites link** | When clicked, a page of all the user's favourite posts appears | Clicked Favourites link | All posts markes as Favourite by the user appear |
 | **Leaving a comment - blank** | When clicking "Submit" without entering a comment, a prompt tells the user what to do | Clicked "Submit" without entering any content in the Body field | Prompt gets displayed: "Please fill out this field." |
 | **Leaving a comment** | When entering content into the Body field and clicking "Submit", the comment gets displayed, and the comment count increases | Clicked "Submit" after entering content in the Body field | Feedback message appears: "Thank you for your comment!"; the comment appears below the blog post and the counter increases |
-| **Editing a comment** | When clicking "Edit" below one of the user's own comments, the comment gets displayed in the Body field, and can be edited; after editing and clicking "Update", the edited comment is displayed below the blog post | Clicked "Edit", edited the comment, and clicked "Update" | The edited comment is displayed below the blog post and a success message displayed: "Comment Updated!" |
+| **Editing a comment** | When clicking "Edit" below one of the user's own comments, the comment gets displayed in the Body field, and can be edited; after editing and clicking "Update", the edited comment is displayed below the blog post | Clicked "Edit", edited the comment, and clicked "Update" | The edited comment is displayed below the blog post and a success message displays: "Comment Updated!" |
 | **Deleting a comment** | When clicking "Delete" below one of the user's own comments, the comment gets deleted | Clicked "Delete" | A modal pops up asking the user to confirm that they want to delete the comment; clicked "Delete"; success message displays: "Comment deleted!" |
 | **Logout link** | Upon clicking, the user is logged out | Clicked the Logout link | A confirmation question is displayed to the user whether they really want to log out; upon clicking "Sign Out", a success message is displayed: "You have signed out." |
 | **Facebook/YouTube/Instagram icons in footer** | Upon clicking, the respective social media site will open in a new tab | Clicked all the icon | The respective site opens in new tab |
@@ -140,4 +139,4 @@ Please note I only tested code which was written or modified by me. I did not te
 | As a site admin I can create, read, update and delete posts so that I can manage the blog content. | As a site admin, I can create, read, update and delete posts from the admin panel by clicking on Posts. |
 | As a site admin I can publish several draft posts at once so that I can be efficient in my role. | As a site admin, I can create several posts in draft mode and then choose to publish them all at once by selecting them and then choosing "Mark selected posts as published" in the dropdown menu. |
 | As a site admin I can un-approve comments so that quality and appropriate content on the blog is ensured. | As a site admin, I can revoke approval of select comments by clicking on the comment and then un-ticking the Approval box |
-| As a site admin I can select a category for my posts so that posts can be grouped according to topic. | As a site admin, I can select a category for my post by clicking on a dropdown menu. I can also create new categories by adding on under Categorys [ sic! ]. |
+| As a site admin I can select a category for my posts so that posts can be grouped according to topic. | As a site admin, I can select a category for my post by clicking on a dropdown menu. I can also create new categories by adding one under Categorys [ sic! ]. |
