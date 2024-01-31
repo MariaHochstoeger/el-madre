@@ -9,11 +9,12 @@ This is a blog about the real-life adventures of El Madre. El Madre is a persona
 ## Table of Contents
 
 1. [Design](#design)
-2. [Features](#features)
-3. [UX](#ux)
-4. [Testing](#testing)
-5. [Sources](#sources)
-6. [Credits](#credits)
+2. [Agile](#agile)
+3. [Features](#features)
+4. [UX](#ux)
+5. [Testing](#testing)
+6. [Sources](#sources)
+7. [Credits](#credits)
 
 ## Design
 
@@ -49,6 +50,24 @@ The wireframes were made in Balsamiq, and show different pages of the blog on di
 
 - Default placeholder image<br>
 <img src="static/images/default-photo.jpg" alt="Placeholder image" width="400">
+
+## Agile
+
+At the start of this project, a Project titles "El Madre Blog" was created on GitHub and linked to the El Madre repository. This El Madre Blog Project was used as a kanban board to keep track of user stories, to dos, and the timeline. The kanban board can be found [here](https://github.com/users/MariaHochstoeger/projects/3).
+
+In total, there were 10 user stories which were moved throughout the development cycle from "To Do" to "In Progress" to "Done".
+
+Details about the individual user stories, their associated Acceptance Critera and Tasks, can be found under the respective links:<br>
+[#1 USER STORY: Create, read, update and delete blog posts](https://github.com/MariaHochstoeger/el-madre/issues/1)<br>
+[#2 USER STORY: Register an account](https://github.com/MariaHochstoeger/el-madre/issues/2)<br>
+[#3 USER STORY: View a site of posts](https://github.com/MariaHochstoeger/el-madre/issues/3)<br>
+[#4 USER STORY: Comment on posts](https://github.com/MariaHochstoeger/el-madre/issues/4)<br>
+[#5 USER STORY: Moderate comments](https://github.com/MariaHochstoeger/el-madre/issues/5)<br>
+[#6 USER STORY: Add a category to posts](https://github.com/MariaHochstoeger/el-madre/issues/6)<br>
+[#7 USER STORY: Choose a category of posts](https://github.com/MariaHochstoeger/el-madre/issues/7)<br>
+[#8 USER STORY: Publish several posts at once](https://github.com/MariaHochstoeger/el-madre/issues/8)<br>
+[#9 USER STORY: Favourite posts](https://github.com/MariaHochstoeger/el-madre/issues/9)<br>
+[#10 USER STORY: View a post in full](https://github.com/MariaHochstoeger/el-madre/issues/10)<br>
 
 ## Features
 
